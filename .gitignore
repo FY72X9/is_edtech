@@ -1,0 +1,6 @@
+.github
+.vscode
+.concept/.unchecked
+.venv
+.dev-memory/
+.env
