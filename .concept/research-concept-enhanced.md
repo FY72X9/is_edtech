@@ -511,16 +511,18 @@ graph TB
 
 ### **6.2. Proposisi Teoretis (Theoretical Propositions)**
 
-| **Kode** | **Proposisi Teoretis** | **Dasar Argumen Teoretis** |
-|:---|:---|:---|
-| P1 | Arsitektur teknologi yang superior secara langsung meningkatkan *Perceived Usefulness* platform bagi pembelajar | TAM: PU ditentukan oleh kualitas sistem dan relevansi tugas [11] |
-| P2 | Efektivitas pedagogis secara langsung meningkatkan *Perceived Usefulness* dan *Language Learning Potential* | Chapelle: *language learning potential* adalah kriteria sentral evaluasi CALL [1] |
-| P3 | Tata kelola institusional yang baik secara langsung meningkatkan *Perceived Ease of Use* bagi pengajar dan administrator | EFLA: *impact* dimensi harus mencakup institusi [9] |
-| P4 | *Perceived Usefulness* dan *Perceived Ease of Use* secara kolektif meningkatkan motivasi intrinsik pembelajar | Extended TAM-SDT: kebutuhan *autonomy* dan *competence* terpenuhi melalui desain teknologi-pedagogi [12] |
-| P5 | *User Experience* memediasi hubungan antara dimensi teknologi-pedagogi dengan motivasi intrinsik | *Flow Theory*: UX optimal tercapai ketika tantangan seimbang dengan keterampilan [24] |
-| P6 | Motivasi intrinsik secara langsung mempengaruhi *Learning Effectiveness* dan *Student Engagement* | SDT: motivasi intrinsik adalah prediktor utama keterlibatan dan pencapaian [12] |
-| P7 | Tata kelola institusional secara langsung mempengaruhi *Institutional Adoption Intention* | *Diffusion of Innovations*: keputusan adopsi organisasi dipengaruhi oleh ketersediaan infrastruktur dan bukti dampak [29] |
-| P8 | Tingkat profisiensi bahasa, gaya belajar, dan jenis tes target memoderasi hubungan antara dimensi evaluasi dengan *outcomes* | *APT Model* (Person-Task-Technology Fit): kontekstualitas interaksi pembelajar-teknologi [30] |
+Delapan proposisi berikut disusun dengan tipe klaim yang sejajar dan eksplisit, berbasis D&M sebagai meta-teori dan SDT sebagai mekanisme psikologis.
+
+| **Kode** | **Tipe** | **Proposisi Teoretis** | **Dasar Argumen Teoretis** |
+|:---|:---:|:---|:---|
+| P1 | *Main effect* | Kualitas arsitektur teknologi (*System Quality*) secara langsung meningkatkan *Perceived Usefulness* dan *User Satisfaction* platform bagi pembelajaran | D&M: System Quality adalah anteseden langsung Use dan Satisfaction [31]; TAM: PU ditentukan oleh kualitas sistem [11] |
+| P2 | *Main effect* | Efektivitas pedagogis (*Information Quality*) secara langsung meningkatkan *Perceived Usefulness* dan *Language Learning Potential* platform | D&M: Information Quality menentukan User Satisfaction [31]; Chapelle: LLP adalah kriteria sentral evaluasi CALL [1] |
+| P3 | *Main effect* | Tata kelola institusional (*Service Quality*) secara langsung meningkatkan *Use* platform oleh dosen dan administrator, serta *Institutional Adoption Intention* | D&M: Service Quality beroperasi di level organisasi, mempengaruhi Use dan Net Benefits pada level institusi [31][32] — bukan Perceived Ease of Use individu |
+| P4 | *Mediating pathway* | *Perceived Usefulness* dan *User Satisfaction* secara kolektif memediasi hubungan antara kualitas platform (TECH+PED) dengan *Use/Engagement* | D&M: PU dan Satisfaction adalah mediator antara kualitas input dan Use [31]; TAM: PU → Behavioral Intention [11] |
+| P5 | *Mediation* | *User Experience* memediasi hubungan antara kualitas TECH dan PED dengan *Use* dan *Engagement* — UX optimal tercapai ketika kualitas teknis dan pedagogis beroperasi secara sinergis | *Flow Theory*: UX optimal muncul dari keseimbangan tantangan-keterampilan [24]; D&M: System Quality + Information Quality secara bersama menentukan Satisfaction [31] |
+| P6 | *Net Benefits pathway* | *Use/Engagement* secara langsung menghasilkan *Net Benefits* individual: peningkatan *Language Learning Potential* dan retensi mahasiswa | D&M: Use → Net Benefits [31]; SDT: behavioral engagement yang termotivasi intrinsik menghasilkan *competence* dan pencapaian [12] |
+| P7 | *Organizational Net Benefits* | Tata kelola institusional (*Service Quality*) secara langsung menghasilkan *Net Benefits* organisasional melalui *Institutional Adoption Intention* dan efisiensi alokasi sumber daya | D&M: Net Benefits mencakup level organisasi, bukan hanya individu [31]; *Diffusion of Innovations*: adopsi dipengaruhi infrastruktur pendukung [29] |
+| P8 | *Moderation* | Tingkat profisiensi bahasa awal, jenis tes target (IELTS vs. TOEFL), dan *learner autonomy* memoderasi kekuatan hubungan antara kualitas platform dengan *Use* dan *Net Benefits* | *Task-Technology Fit* (TTF, Goodhue & Thompson, 1995) [30]: fit antara person-task-technology menentukan efektivitas penggunaan; profisiensi menentukan sejauh mana *Information Quality* dimanfaatkan |
 
 ---
 
@@ -568,7 +570,7 @@ Penelitian ini berhasil menyusun sebuah *theoretical framework* dan *assessment 
 
 [3] J. Leakey, *Evaluating Computer-Assisted Language Learning: An Integrated Approach to Effectiveness Research in CALL*. Bern, Switzerland: Peter Lang, 2011.
 
-[4] B. L. McMurry et al., "An evaluation framework for CALL," *TESL-EJ*, vol. 20, no. 2, pp. 1–31, 2016.
+[4] D. Al-Fraihat, M. Joy, R. Masa'deh, and J. Sinclair, "Evaluating e-learning systems success: An empirical study," *Comput. Hum. Behav.*, vol. 102, pp. 67–86, 2020. https://doi.org/10.1016/j.chb.2019.08.004
 
 [5] F. Rosell-Aguilar, "State of the app: A taxonomy and framework for evaluating language learning mobile applications," *CALICO J.*, vol. 34, no. 2, pp. 243–258, 2017.
 
@@ -576,7 +578,7 @@ Penelitian ini berhasil menyusun sebuah *theoretical framework* dan *assessment 
 
 [7] C. Kivunja, "Distinguishing between theory, theoretical framework, and conceptual framework," *Int. J. High. Educ.*, vol. 7, no. 6, pp. 44–53, 2018.
 
-[8] M. J. Page et al., "The PRISMA 2020 statement: An updated guideline for reporting systematic reviews," *BMJ*, vol. 372, p. n71, 2021.
+[8] R. J. Torraco, "Writing integrative literature reviews: Guidelines and examples," *Hum. Resour. Dev. Rev.*, vol. 4, no. 3, pp. 356–367, 2005. https://doi.org/10.1177/1534484305278283
 
 [9] M. Scheffel et al., "The evaluation framework for learning analytics," in *Proc. LAK*, 2014, pp. 16–20.
 
@@ -614,12 +616,16 @@ Penelitian ini berhasil menyusun sebuah *theoretical framework* dan *assessment 
 
 [26] IMS Global Learning Consortium, *Learning Information Services Specification*. Lake Mary, FL: IMS Global, 2018.
 
-[27] D. G. Oblinger and J. L. Oblinger, *Educating the Net Generation*. Boulder, CO: EDUCAUSE, 2005.
+[27] K. E. Arnold and M. D. Pistilli, "Course signals at Purdue: Using learning analytics to increase student success," in *Proc. 2nd Int. Conf. Learn. Anal. Knowl.* (LAK '12), New York, NY: ACM, 2012, pp. 267–270. https://doi.org/10.1145/2330601.2330666
 
 [28] T. M. Choquette, "Sustainability of educational technology," in *Handbook of Research on Educational Communications and Technology*, 4th ed., J. M. Spector et al., Eds. New York, NY: Springer, 2014, pp. 723–730.
 
 [29] E. M. Rogers, *Diffusion of Innovations*, 5th ed. New York, NY: Free Press, 2003.
 
 [30] D. L. Goodhue and R. L. Thompson, "Task-technology fit and individual performance," *MIS Quart.*, vol. 19, no. 2, pp. 213–236, 1995.
+
+[31] W. H. DeLone and E. R. McLean, "The DeLone and McLean model of information systems success: A ten-year update," *J. Manage. Inf. Syst.*, vol. 19, no. 4, pp. 9–30, 2003. https://doi.org/10.1080/07421222.2003.11045748
+
+[32] S. Petter, W. DeLone, and E. McLean, "Measuring information systems success: Models, dimensions, measures, and interrelationships," *Eur. J. Inf. Syst.*, vol. 17, no. 3, pp. 236–263, 2008. https://doi.org/10.1057/ejis.2008.15
 
 ---
