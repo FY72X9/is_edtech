@@ -29,6 +29,8 @@ Namun, lanskap framework evaluasi untuk platform pembelajaran digital bersifat t
 
 Terlepas dari proliferasi framework yang ada, belum ada studi yang secara sistematis **memetakan cakupan dimensi** dari seluruh framework yang tersedia, mengidentifikasi dimensi-dimensi yang secara konsisten tidak terwakili, dan memetakan *whitespace* konseptual yang harus diisi oleh penelitian berikutnya. Inilah yang menjadi kontribusi utama paper ini.
 
+Penting untuk dicatat bahwa paper ini berfungsi sebagai **precursor study** bagi penelitian lanjutan yang membangun *theoretical framework* integratif untuk evaluasi platform persiapan tes berbahasa bermutu tinggi. Gap-gap yang diidentifikasi secara empiris dalam scoping review ini — khususnya tidak terwakilinya dimensi *high-stakes test specificity* (D4) dan perspektif multi-stakeholder institusional (D6) — menjadi justifikasi langsung bagi tiga dimensi framework yang diusulkan penelitian tersebut: *Technology Architecture* (TECH), *Pedagogy Effectiveness* (PED), dan *Institutional Governance* (INST), yang masing-masing berakar pada konstruk *System Quality*, *Information Quality*, dan *Service Quality* dalam DeLone & McLean IS Success Model [10]. Dengan demikian, coverage matrix yang dihasilkan paper ini tidak sekadar mendokumentasikan *what is missing* — ia berfungsi sebagai **baseline gap evidence** yang memberi landasan empiris-analitik bagi konstruksi framework baru.
+
 ### **1.2. Rumusan Masalah**
 
 1. **Framework evaluasi apa saja yang telah dikembangkan untuk platform pembelajaran bahasa digital dan EdTech di konteks pendidikan tinggi dalam dua dekade terakhir?**
@@ -263,6 +265,7 @@ graph TD
         B[Gap 2: Disciplinary Silos<br/>CALL frameworks lack D1+D3<br/>IS frameworks lack D2 domain depth]
         C[Gap 3: Institutional Blindspot<br/>D3 only in LA tools (F8/F9)<br/>absent from all CALL/MALL frameworks]
         D[Gap 4: Single-Stakeholder Bias<br/>D6 never achieves full coverage<br/>— max ◑ across all 12 frameworks]
+        G5[Gap 5: AI/Technology Blindspot<br/>No framework operationalizes<br/>AI-assisted or LLM-based assessment<br/>as an evaluation dimension]
     end
     
     E[Rigor Finding — D5 separate<br/>7/12 frameworks: ◑ partial defs<br/>5/12 frameworks: ✗ checklist only]
@@ -271,12 +274,14 @@ graph TD
     B --> F
     C --> F
     D --> F
-    E -.->|"framework quality finding<br/>(not a coverage gap)"| F
+    G5 -.->|"emerging gap —<br/>not in current corpus"| F
+    E -.-|"framework quality finding<br/>(not a coverage gap)"| F
     
     style A fill:#ffebee
     style B fill:#ffebee
     style C fill:#ffebee
     style D fill:#ffebee
+    style G5 fill:#fff3e0
     style E fill:#e8eaf6
     style F fill:#b71c1c,color:#fff
 ```
@@ -295,7 +300,16 @@ Temuan ini menunjukkan bahwa gap bukan disebabkan oleh kelalaian peneliti indivi
 
 Bagi administrator perguruan tinggi, temuan ini memiliki implikasi operasional langsung: tidak ada framework tunggal yang memadai untuk pengambilan keputusan adopsi yang komprehensif. Framework dengan skor tertinggi — F6 (Almaiah et al.) dan F7 (Al-Fraihat et al.) keduanya pada 2.5/5 — tetap tidak mencakup D4 (high-stakes test specificity) dan hanya menjangkau D6 (multi-stakeholder) secara parsial.
 
-Namun, coverage matrix juga memungkinkan **kombinasi strategis** berdasarkan prioritas institusional. Sebagai ilustrasi: administrator yang memprioritaskan alignment teknis dan kelengkapan pedagogi dapat mengombinasikan F7 Al-Fraihat (terkuat pada D1+D3) dengan F1 Chapelle (terkuat pada D2+D4 parsial) — kombinasi ini bersama mencakup D1, D2, D3, dan D4 secara parsial. Dimensi D6 tetap menjadi blind spot kolektif yang tidak tercover secara memadai oleh kombinasi manapun dalam korpus ini. Matrix ini dengan demikian berfungsi sebagai **decision tool berbasis bukti** — bukan hanya gap catalog.
+Namun, coverage matrix juga memungkinkan **kombinasi strategis** berdasarkan prioritas institusional. Matrix ini berfungsi sebagai **decision tool berbasis bukti** — bukan hanya gap catalog — karena memungkinkan administrator memilih pasangan framework yang bersama-sama memaksimalkan coverage untuk kebutuhan spesifik mereka:
+
+| **Prioritas Institusional** | **Kombinasi yang Direkomendasikan** | **Dimensi Tercakup Bersama** | **Dimensi yang Tetap Gap** |
+|:---|:---|:---|:---|
+| Teknis + Pedagogi | F7 (Al-Fraihat) + F1 (Chapelle) | D1 ✓, D2 ✓, D3 ◑ | D4 ◑, D6 ◑ |
+| Pedagogi + Tes Spesifik | F1 (Chapelle) + F12 (Essafi/MLLA) | D2 ✓, D4 ◑ | D1 ◑, D3 ✗, D6 ✗ |
+| Governance + Analytics | F8 (EFLA) + F7 (Al-Fraihat) | D1 ✓, D3 ✓, D6 ◑ | D2 ◑, D4 ✗ |
+| Komprehensif (best-effort) | F7 + F1 + F8 | D1 ✓, D2 ✓, D3 ✓, D4 ◑, D6 ◑ | D4 tidak pernah ✓ |
+
+Tabel di atas mengkonfirmasi temuan sentral: bahkan dengan tiga framework digabungkan sekaligus, D4 (High-Stakes Test Specificity) tidak pernah mencapai cakupan penuh. Ini menegaskan bahwa gap tersebut bukan akibat kekurangan satu framework tertentu, melainkan *structural absence* di seluruh korpus yang ada.
 
 Temuan D5 memiliki implikasi tersendiri bagi tata kelola teknologi berbasis bukti: 5 dari 12 framework yang ditelaah tidak lebih dari reflective checklist (✗ pada D5), yang berarti keputusan adopsi yang mengandalkan framework tersebut tidak dapat diaudit atau direplikasi secara sistematis. Institusi yang menerapkan *evidence-based technology governance* perlu memperhatikan tidak hanya *apa* yang dicakup framework, tetapi *seberapa teroperasionalisasi* dimensi tersebut.
 
@@ -311,11 +325,19 @@ Tiga pertanyaan penelitian yang diajukan terjawab sebagai berikut:
 
 **RQ1** (*Framework apa saja yang tersedia untuk mengevaluasi platform pembelajaran bahasa digital di pendidikan tinggi?*): Scoping review ini mengidentifikasi 12 framework preliminary dari empat disiplin — Linguistik Terapan (CALL/MALL), Sistem Informasi, Learning Analytics, dan Instructional Technology — yang diterbitkan antara 2001 dan 2025. Tidak ada disiplin tunggal yang mendominasi secara komprehensif: CALL menghasilkan framework terbanyak (F1–F5) namun terbatas pada dimensi pedagogi; IS menghasilkan framework yang lebih komprehensif secara teknis namun kehilangan domain-spesifisitas bahasa dan tes.
 
-**RQ2** (*Dimensi mana yang paling sering dan paling jarang tercakup?*): D2 (Pedagogy Effectiveness) adalah dimensi yang paling konsisten tercakup, terutama di seluruh framework CALL. Sebaliknya, D4 (High-Stakes Test Specificity) dan D6 (Multi-Stakeholder Perspective) tidak pernah mencapai cakupan penuh di framework manapun — maksimum ◑ di keduanya. D3 (Institutional Governance) hanya ditemukan secara penuh pada framework learning analytics (F8/F9), yang tidak dirancang sebagai alat evaluasi platform bahasa. Pada D5 (rigor indicator): 5 dari 12 framework tidak memiliki definisi operasional yang memadai, menjadikannya tidak dapat dioperasionalisasikan untuk penilaian sistematis yang reproducible.
+**RQ2** (*Dimensi mana yang paling sering dan paling jarang tercakup?*): D2 (Pedagogy Effectiveness) adalah dimensi yang paling konsisten tercakup, terutama di seluruh framework CALL. Sebaliknya, D4 (High-Stakes Test Specificity) dan D6 (Multi-Stakeholder Perspective) tidak pernah mencapai cakupan penuh di framework manapun — maksimum ◑ di keduanya. D3 (Institutional Governance) hanya ditemukan secara penuh pada framework learning analytics (F8/F9), yang tidak dirancang sebagai alat evaluasi platform bahasa. Pada D5 (rigor indicator): 5 dari 12 framework tidak memiliki definisi operasional yang memadai.
 
 **RQ3** (*Adakah framework yang mencakup ketiga dimensi utama [D1, D2, D3] sekaligus beserta D4 dan D6?*): Tidak ada. Framework dengan cakupan tertinggi (F6 dan F7) hanya mencapai 2.5/5 (50%). Tidak ada framework yang secara simultan mencakup D1, D2, D3, dan D4 — bahkan pada level parsial.
 
-Coverage matrix yang dihasilkan berfungsi sebagai **baseline gap evidence** yang dapat dikutip sebagai justifikasi empiris untuk pengembangan framework baru yang terintegrasi. Arah penelitian yang direkomendasikan: (1) pengembangan framework yang menjembatani IS dan Linguistik Terapan menggunakan meta-teori unifikasi; (2) operasionalisasi D4 (high-stakes specificity) yang secara sistematis absen dari semua framework yang ada; (3) integrasi perspektif institusional (D3) ke dalam framework evaluasi platform berbasis bahasa.
+Coverage matrix yang dihasilkan berfungsi sebagai **baseline gap evidence** yang dapat dikutip sebagai justifikasi empiris untuk pengembangan framework baru yang terintegrasi. Arah penelitian yang direkomendasikan mencakup empat jalur prioritas:
+
+1. **Pengembangan framework integratif multidisiplin** yang menjembatani IS dan Linguistik Terapan menggunakan meta-teori unifikasi — khususnya DeLone & McLean IS Success Model (2003) sebagai platform ontologis yang mengoperasionalisasikan dimensi D1 (TECH), D2 (PED), dan D3+D6 (INST) secara simultan.
+
+2. **Operasionalisasi D4 (High-Stakes Test Specificity)** yang secara sistematis absen dari seluruh 12 framework yang ditelaah. Dimensi ini memerlukan spesifikasi indikator yang berakar pada *Language Learning Potential* (Chapelle, 2001) dan *authenticity theory* (Bachman & Palmer, 2010) — sesuatu yang belum dilakukan oleh framework IS manapun dalam korpus ini.
+
+3. **Integrasi perspektif non-Anglophone**: pembatasan pencarian pada literatur bahasa Inggris berpotensi mengecualikan framework yang dikembangkan dalam konteks Asia Timur (khususnya Mandarin, Jepang, Korea) dan Amerika Latin, yang mungkin mengoperasionalisasikan D4 secara berbeda sesuai standar tes regional mereka (JLPT, HSK, DELE).
+
+4. **AI/LLM sebagai dimensi evaluasi emerging**: tidak ada framework dalam korpus yang mengoperasionalisasikan kemampuan platform dalam memanfaatkan AI generatif — seperti LLM-based automated writing scoring, AI-powered speech assessment, atau adaptive feedback berbasis model bahasa besar — sebagai kriteria evaluasi yang tersendiri. Seiring proliferasi AI dalam EdTech (post-2023), dimensi ini berpotensi menjadi *D7 — AI-Augmented Assessment Capability* dalam framework generasi berikutnya, dan memerlukan pengembangan definisi operasional serta koding yang dedikasi.
 
 ---
 
