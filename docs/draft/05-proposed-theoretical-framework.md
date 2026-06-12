@@ -1,4 +1,4 @@
-# Proposed Theoretical Framework — IS EdTech Main Paper
+# Proposed theoretical framework  -  IS EdTech Main Paper
 
 **Word count target:** ~1500 words  
 **Structure:** TECH, PED, INST dimensions → Conceptual justifications
@@ -15,25 +15,25 @@ The proposed framework is structured as a network of interlinked concepts formin
 TECH captures technical system quality, drawing on Human-Computer Interaction (HCI) and Davis's TAM~[b11]. System stability is grounded in software quality standards (ISO 25010)~[b14]. The adaptive algorithm is grounded in intelligent tutoring systems and adaptive learning theories, stating that personalized difficulty calibration determines self-directed learning effectiveness~[b15], including prompt stability and response latency in GenAI-supported environments~[b37][b40]. Minimizing extraneous cognitive load through clean interface design is grounded in cognitive load theory~[b16].
 
 \subsubsection{Dimension 2: Pedagogy Effectiveness (PED)}
-PED operationalises information quality for language learning. Materials must align with test rubrics and band descriptors (washback theory)~[b21]. Micro-learning modularity matches attention constraints~[b22], while spaced repetition schedules align with the cognitive spacing effect~[b23]. Automated feedback quality is grounded in Hattie & Timperley's model, requiring timely, precise, and actionable diagnostics, especially when utilizing Large Language Models (LLMs) for speaking and writing scoring~[b17][b38][b39]. Engagement mechanics are justified by Self-Determination Theory (SDT)~[b12].
+PED operationalises information quality for language learning. Materials must conform to test rubrics and band descriptors (washback theory)~[b21]. Micro-learning modularity matches attention constraints~[b22], while spaced repetition schedules correspond to the cognitive spacing effect~[b23]. Automated feedback quality is grounded in Hattie & Timperley's model, requiring timely, precise, and actionable diagnostics, especially when utilizing Large Language Models (LLMs) for speaking and writing scoring~[b17][b38][b39]. Engagement mechanics are justified by Self-Determination Theory (SDT)~[b12].
 
 \subsubsection{Dimension 3: Institutional Governance (INST)}
 INST captures service quality. Dashboard analytics and monitoring tools draw on learning analytics frameworks~[b9]. Interoperability requires standard API architectures~[b26]. Decision-support metrics for administrators draw on IT governance and organization adoption theories~[b18]. The adoption of educational technology relies on structural support, which affects adoption intention~[b28][b29].
 
 \subsection{Cross-Cutting Concepts}
 
-Several concepts bridge these dimensions. Table~tab:cross_cutting defines their theoretical origins and functions.
+Several concepts bridge these dimensions. Table~tab:cross_cutting defines their theoretical origins and functions. These cross-cutting concepts are the theoretical links that connect platform qualities (inputs) with adoption outcomes (benefits). Language Learning Potential (LLP) is derived from CALL theory (Chapelle, 2001) and represents the pedagogical net benefit at the student level, measuring how much a student's linguistic capability increases through platform usage. Perceived Usefulness (PU) is derived from TAM (Davis, 1989) and is the primary cognitive mediator: if students and instructors perceive that the platform's TECH and PED qualities help them achieve high-stakes test scores, they are more likely to use it. User Experience (UX) captures the affective dimension of interaction, bridging TECH stability and PED engagement to reduce test anxiety. Finally, Practicality represents the institutional service cost-utility (INST), evaluating whether the platform's administrative benefits justify its implementation and maintenance costs. These cross-cutting concepts are the theoretical links that connect platform qualities (inputs) with adoption outcomes (benefits). Language Learning Potential (LLP) is derived from CALL theory (Chapelle, 2001) and represents the pedagogical net benefit at the student level, measuring how much a student's linguistic capability increases through platform usage. Perceived Usefulness (PU) is derived from TAM (Davis, 1989) and is the primary cognitive mediator: if students and instructors perceive that the platform's TECH and PED qualities help them achieve high-stakes test scores, they are more likely to use it. User Experience (UX) captures the affective dimension of interaction, bridging TECH stability and PED engagement to reduce test anxiety. Finally, Practicality represents the institutional service cost-utility (INST), evaluating whether the platform's administrative benefits justify its implementation and maintenance costs.
 
 \begin{table*}[t]
   \caption{Cross-Cutting Concepts Bridging the Core Dimensions}
   
   \centering
   \renewcommand{\arraystretch}{1.3}
-  \begin{tabular}{@{} L{4.0cm} L{4.0cm} L{8.5cm} @{} }
+  \begin{tabular}{@{} L{3.5cm} L{3.8cm} L{8.0cm} @{} }
     \toprule
     **Concept** & **Theoretical Origin** & **Function in the Proposed Framework** 
     \midrule
-    **Language Learning Potential (LLP)** & Chapelle (2001)~[b1] & Operationalises Net Benefits at the individual level. LLP serves as the core CALL evaluative criterion, mapping directly to D4 (High-Stakes Specificity). 
+    **Language Learning Potential (LLP)** & Chapelle (2001)~[b1] & Operationalises Net Benefits at the individual level. LLP is the core CALL evaluative criterion, mapping directly to D4 (High-Stakes Specificity). 
     **Perceived Usefulness (PU)** & Davis (1989)~[b11] & Mediates quality inputs (TECH/PED) and platform usage at the individual level. 
     **User Experience (UX)** & Rosell-Aguilar (2017)~[b5] & Captures the holistic quality of interaction between TECH and PED; mediates usage. 
     **Practicality** & Chapelle (2001)~[b1]; Hubbard (2011)~[b2] & Evaluates the feasibility of the service quality (INST) for institutional adoption. 
@@ -46,5 +46,5 @@ Several concepts bridge these dimensions. Table~tab:cross_cutting defines their 
 
 ---
 
-*Source: Extracted from ethe_main.tex — keep synchronized*  
+*Source: Extracted from ethe_main.tex  -  keep synchronized*  
 *Status: ✅ Drafted | ☐ Peer-reviewed internally | ☐ Final*

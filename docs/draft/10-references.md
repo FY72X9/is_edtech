@@ -1,4 +1,4 @@
-# References — IS EdTech Main Paper
+# References  -  IS EdTech Main Paper
 
 **Structure:** Complete verified citation list (b1–b45)
 
@@ -141,5 +141,5 @@ M. Essafi, ``The Impact of Demographics on Moroccan University Students' Percept
 
 ---
 
-*Source: Extracted from ethe_main.tex — keep synchronized*  
+*Source: Extracted from ethe_main.tex  -  keep synchronized*  
 *Status: ✅ Drafted | ☐ Peer-reviewed internally | ☐ Final*
