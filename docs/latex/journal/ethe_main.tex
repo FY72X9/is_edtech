@@ -23,7 +23,9 @@
 
 % ── Graphics ─────────────────────────────────────────────────
 \usepackage{graphicx}
-\graphicspath{{../../../images/}}
+% LOCAL compilation: \graphicspath{{../../../images/}}
+% OVERLEAF: upload images/ folder to project root, use path below:
+\graphicspath{{images/}}
 
 % ── Tables ───────────────────────────────────────────────────
 \usepackage{booktabs}
@@ -71,7 +73,7 @@
 The proliferation of digital technology platforms for high-stakes language test preparation (e.g., IELTS and TOEFL) in higher education has exposed a major conceptual gap. Existing evaluation frameworks are fragmented: computer-assisted language learning (CALL) studies emphasize pedagogical aspects while neglecting information systems (IS) architecture, whereas IS models prioritize technical adoption but overlook language testing specificity. To address this disciplinary divide, this study constructs an integrated theoretical framework and assessment model using Conceptual Framework Analysis (CFA) and Design Science Research (DSR) guidelines. The resulting multidimensional model integrates Technology Architecture, Pedagogy Effectiveness, and Institutional Governance dimensions, grounded in the DeLone and McLean IS Success Model as a meta-theory. The framework is operationalized into fifteen specific indicators with systematic definitions. Theoretical relationships are mapped in a structural equation model with eight propositions. The framework's utility and necessity are validated mathematically: a linear programming proof demonstrates the persistence of coverage gaps in existing frameworks, while a Monte Carlo simulation ($N = 100,000$) under Multi-Attribute Utility Theory (MAUT) complexity penalties demonstrates the Pareto dominance of the proposed framework (dominance probability of 85.80\%). A proof-of-concept inter-rater reliability test yields substantial agreement (Cohen's Kappa = 0.7917), validating the operational clarity of the assessment rubrics. This study provides educational technology researchers and university administrators with a rigorous, evidence-based instrument for evaluating and adopting high-stakes test preparation platforms.
 \end{abstract}
 
-\noindent \textbf{Keywords:} CALL evaluation, EdTech assessment framework, scoping review, dimensional gap analysis, higher education
+\noindent \textbf{Keywords:} CALL evaluation, EdTech assessment framework, integrative literature review, dimensional gap analysis, higher education
 
 \newpage
 
@@ -119,7 +121,7 @@ Table~\ref{tab:objectives} details the conceptual research objectives and corres
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{fig5_research_program_architecture}
-  \caption{Research Program Architecture illustrating the relationship between the scoping review and the conceptual framework development.}
+  \caption{Research Program Architecture illustrating the relationship between the integrative literature review and the conceptual framework development.}
   \label{fig:program_arch}
 \end{figure*}
 
@@ -176,7 +178,7 @@ Following Jabareen (2009)~\cite{b6}, the framework was developed through eight i
     \textbf{4. Deconstructing Concepts} & Component, history, and relationship analysis of concepts based on source theories (e.g., Sweller's cognitive load; Davis's TAM). & Componential definitions per concept \\
     \textbf{5. Integrating Concepts} & Synthesis of concepts from different disciplines into complementary evaluation dimensions. & Preliminary framework dimensions \\
     \textbf{6. Synthesis \& Resynthesis} & Construction of a network of interlinked concepts forming a plane of understanding of platform evaluation. & Theoretical framework v0.1 \\
-    \textbf{7. Validation} & Three-layer DSR validation~\cite{b34}: Layer 1 (Theoretical) coverage matrix cross-validation; Layer 2 (Mathematical) linear programming proof (Theorem 1); Layer 3 (Computational) Monte Carlo sensitivity simulation (Theorem 2). & Validated framework v1.0, simulation results, formal proofs \\
+    \textbf{7. Validation} & Three-layer DSR validation~\cite{b34}: Layer 1 (Theoretical) coverage matrix cross-validation; Layer 2 (Mathematical) convex combination bound (Lemma 1); Layer 3 (Computational) Monte Carlo sensitivity simulation (Proposition 1). & Validated framework v1.0, simulation results, formal proofs \\
     \textbf{8. Rethinking \& Revision} & Iterative revisions based on expert feedback and cross-mapping to ensure novelty and non-redundancy. & Final theoretical framework \\
     \bottomrule
   \end{tabular}
@@ -274,15 +276,15 @@ To provide empirical proof of these gaps, Table~\ref{tab:matrix} maps 12 landmar
     F1 Chapelle (2001)~\cite{b1} & \nocov & \fullcov & \nocov & \partcov & \nocov & 1.5 & \partcov \\
     F2 Hubbard (2011)~\cite{b2} & \nocov & \fullcov & \nocov & \nocov & \nocov & 1.0 & \partcov \\
     F3 Leakey (2011)~\cite{b3} & \partcov & \fullcov & \nocov & \nocov & \nocov & 1.5 & \partcov \\
-    F4 Colpaert (2004) & \nocov & \fullcov & \nocov & \nocov & \nocov & 1.0 & \partcov \\
+    F4 Colpaert (2004)~\cite{b41} & \nocov & \fullcov & \nocov & \nocov & \nocov & 1.0 & \partcov \\
     F5 Rosell-Aguilar (2017)~\cite{b5} & \partcov & \partcov & \nocov & \nocov & \nocov & 1.0 & \nocov \\
-    F6 Almaiah et al. (2021) & \fullcov & \partcov & \partcov & \nocov & \partcov & 2.5 & \nocov \\
+    F6 Almaiah et al. (2021)~\cite{b42} & \fullcov & \partcov & \partcov & \nocov & \partcov & 2.5 & \nocov \\
     F7 Al-Fraihat et al. (2020)~\cite{b4} & \fullcov & \partcov & \partcov & \nocov & \partcov & 2.5 & \partcov \\
     F8 Scheffel et al. (EFLA) (2014)~\cite{b9} & \nocov & \nocov & \fullcov & \nocov & \partcov & 1.5 & \partcov \\
     F9 Park \& Jo (LAD) (2019)~\cite{b10} & \nocov & \nocov & \fullcov & \nocov & \partcov & 1.5 & \partcov \\
-    F10 UTAUT/Venkatesh (2003) & \partcov & \nocov & \nocov & \nocov & \nocov & 0.5 & \nocov \\
-    F11 TRAM/Kampa (2024) & \partcov & \partcov & \nocov & \nocov & \nocov & 1.0 & \nocov \\
-    F12 Essafi/MLLA (2025) & \partcov & \fullcov & \nocov & \partcov & \nocov & 2.0 & \nocov \\
+    F10 UTAUT/Venkatesh (2003)~\cite{b43} & \partcov & \nocov & \nocov & \nocov & \nocov & 0.5 & \nocov \\
+    F11 TRAM/Kampa (2023)~\cite{b44} & \partcov & \partcov & \nocov & \nocov & \nocov & 1.0 & \nocov \\
+    F12 Essafi/MLLA (2025)~\cite{b45} & \partcov & \fullcov & \nocov & \partcov & \nocov & 2.0 & \nocov \\
     \midrule
     \textbf{Proposed Framework ($F^*$)} & \textbf{\fullcov} & \textbf{\fullcov} & \textbf{\fullcov} & \textbf{\fullcov} & \textbf{\fullcov} & \textbf{5.0} & \textbf{\fullcov} \\
     \bottomrule
@@ -366,7 +368,7 @@ While D\&M provides an ontological scaffold, it does not define domain-specific 
 
 \subsection{Framework Philosophy}
 
-The proposed framework is structured as a network of interlinked concepts forming a plane of understanding. The three dimensions (TECH, PED, INST) are not isolated variables but mutually articulating concepts that shape platform success. grounded in the DeLone \& McLean model (2003)~\cite{b31}, which states that system success requires system, information, and service qualities. In this domain, they are operationalised as: TECH $\leftarrow$ System Quality, PED $\leftarrow$ Information Quality, INST $\leftarrow$ Service Quality. This operationalisation is not merely a relabeling; each requires conceptual enrichment from domain-specific literature (CALL, SLA, EFLA) because D\&M does not define domain-specific metrics. This network is further enriched by crossing concepts from TAM (Davis, 1989)~\cite{b11} and Self-Determination Theory (SDT) (Deci \& Ryan, 1985)~\cite{b12} to bridge platform qualities and outcomes.
+The proposed framework is structured as a network of interlinked concepts forming a plane of understanding. The three dimensions (TECH, PED, INST) are not isolated variables but mutually articulating concepts that shape platform success. This framework is grounded in the DeLone \& McLean model (2003)~\cite{b31}, which states that system success requires system, information, and service qualities. In this domain, they are operationalised as: TECH $\leftarrow$ System Quality, PED $\leftarrow$ Information Quality, INST $\leftarrow$ Service Quality. This operationalisation is not merely a relabeling; each requires conceptual enrichment from domain-specific literature (CALL, SLA, EFLA) because D\&M does not define domain-specific metrics. This network is further enriched by crossing concepts from TAM (Davis, 1989)~\cite{b11} and Self-Determination Theory (SDT) (Deci \& Ryan, 1985)~\cite{b12} to bridge platform qualities and outcomes.
 
 \subsection{Theoretical Justification per Dimension}
 
@@ -532,8 +534,8 @@ Table~\ref{tab:parameters} presents the predicted parameter signs and their theo
 
 \subsection{Mathematical Validation}
 
-\subsubsection{Theorem 1: D4 Gap Persistence (Linear Programming Proof)}
-\textbf{Statement:} No convex combination of the 12 existing frameworks in the corpus can close the coverage gap on the D4 (High-Stakes Test Specificity) dimension.
+\subsubsection{Lemma 1: D4 Gap Persistence (Convex Combination Bound)}
+\textbf{Lemma 1 (D4 Gap Persistence):} No convex combination of the 12 existing frameworks in the corpus can close the coverage gap on the D4 (High-Stakes Test Specificity) dimension.
 
 \textbf{Proof:} Let $\boldsymbol{\lambda} = (\lambda_1, \ldots, \lambda_{12})$ be a weight vector in the simplex $\Delta^{12}$ (where $\lambda_i \geq 0$ and $\sum_i \lambda_i = 1$). Define the maximum achievable D4 score:
 \begin{equation}
@@ -547,7 +549,7 @@ Because $\max_{i} s(F_i, D_4) = 0.5$, for any $\boldsymbol{\lambda} \in \Delta^{
 \begin{equation}
   \sum_{i=1}^{12} \lambda_i \cdot s(F_i, D_4) \leq \max_i s(F_i, D_4) = 0.5 < 1.0 \qquad \blacksquare
 \end{equation}
-This proof demonstrates that the high-stakes test specificity gap is structural, requiring an explicit new framework design ($F^*$) to be resolved. Table~\ref{tab:lp_gaps} details the persistence scores.
+This inequality demonstrates that the high-stakes test specificity gap is structural, requiring an explicit new framework design ($F^*$) to be resolved. Table~\ref{tab:lp_gaps} details the persistence scores.
 
 \begin{table}[h]
   \caption{LP-based Dimension Gap Persistence Analysis}
@@ -567,8 +569,8 @@ This proof demonstrates that the high-stakes test specificity gap is structural,
   \end{tabular}
 \end{table}
 
-\subsubsection{Theorem 2: F* Pareto Dominance under Complexity Constraints}
-\textbf{Statement:} Incorporating a penalty for framework complexity using Multi-Attribute Utility Theory (MAUT), the institutional utility is modeled as:
+\subsubsection{Proposition 1: F* Pareto Dominance under Complexity Constraints}
+\textbf{Proposition 1 (Pareto Dominance):} Incorporating a penalty for framework complexity using Multi-Attribute Utility Theory (MAUT), the institutional utility is modeled as:
 \begin{equation}
   Utility(f, \mathbf{w}, \alpha) = \sum_{d \in \mathcal{D}} w_d \cdot s(f,d) - \alpha \cdot \text{Complexity}(f)
 \end{equation}
@@ -601,14 +603,14 @@ To test if the gap findings are sensitive to coding variations, partial coding e
     F8 Scheffel et al. (EFLA) (2014)~\cite{b9} & 1.500 & [1.310, 1.690] \\
     F9 Park \& Jo (LAD) (2019)~\cite{b10} & 1.500 & [1.310, 1.690] \\
     F10 UTAUT/Venkatesh (2003) & 0.500 & [0.310, 0.691] \\
-    F11 TRAM/Kampa (2024) & 1.002 & [0.688, 1.312] \\
+    F11 TRAM/Kampa (2023) & 1.002 & [0.688, 1.312] \\
     F12 Essafi/MLLA (2025) & 2.000 & [1.691, 2.310] \\
     \textbf{Proposed Framework ($F^*$ with Leakage)} & \textbf{4.500} & \textbf{[4.248, 4.753]} \\
     \bottomrule
   \end{tabular}
+  \vskip 2pt
+  \raggedright \scriptsize $^{\dagger}$ Frameworks F2 and F4 contain no partial (◑~=~0.5) coverage entries; therefore, no stochastic perturbation is applied and their confidence interval collapses to a point estimate at the nominal score.
 \end{table}
-
-\footnotetext[$\dagger$]{Frameworks F2 and F4 contain no partial (◑~=~0.5) coverage entries; therefore, no stochastic perturbation is applied and their confidence interval collapses to a point estimate at the nominal score.}
 
 The simulation reports:
 \begin{itemize}
@@ -777,7 +779,7 @@ J. Leakey, \textit{Evaluating Computer-Assisted Language Learning: An Integrated
 D. Al-Fraihat, M. Joy, R. Masa'deh, and J. Sinclair, ``Evaluating e-learning systems success: An empirical study,'' \textit{Comput. Hum. Behav.}, vol. 102, pp. 67--86, 2020. [Online]. Available: \url{https://doi.org/10.1016/j.chb.2019.08.004}
 
 \bibitem{b5}
-F. Rosell-Aguilar, ``State of the app: A taxonomy and framework for evaluating language learning mobile applications,'' \textit{CALICO J.}, vol. 34, no. 2, pp. 243--258, 2017.
+F. Rosell-Aguilar, ``State of the app: A taxonomy and framework for evaluating language learning mobile applications,'' \textit{CALICO J.}, vol. 34, no. 2, pp. 243--258, 2017. [Online]. Available: \url{https://doi.org/10.1558/cj.27623}
 
 \bibitem{b6}
 Y. Jabareen, ``Building a conceptual framework: Philosophy, definitions, and procedure,'' \textit{Int. J. Qual. Methods}, vol. 8, no. 4, pp. 49--62, 2009.
@@ -792,7 +794,7 @@ R. J. Torraco, ``Writing integrative literature reviews: Guidelines and examples
 M. Scheffel, H. Drachsler, S. Stoyanov, and M. Specht, ``Quality indicators for learning analytics,'' \textit{Educ. Technol. Soc.}, vol. 17, no. 4, pp. 117--132, 2014.
 
 \bibitem{b10}
-Y. Park and I.-H. Jo, ``Development of the learning analytics dashboard to support students' learning performance,'' \textit{J. Comput. Assist. Learn.}, vol. 35, no. 4, pp. 556--568, 2019. [Online]. Available: \url{https://doi.org/10.1111/jcal.12354}
+Y. Park and I.-H. Jo, ``Development of the learning analytics dashboard to support students' learning performance,'' \textit{J. Universal Comput. Sci.}, vol. 21, no. 1, pp. 110--133, 2015. [Online]. Available: \url{https://doi.org/10.3217/jucs-021-01-0110}
 
 \bibitem{b11}
 F. D. Davis, ``Perceived usefulness, perceived ease of use, and user acceptance of information technology,'' \textit{MIS Quart.}, vol. 13, no. 3, pp. 319--340, 1989.
@@ -883,6 +885,21 @@ B. L. Moorhouse, K. M. Wong, and L. Kohnke, ``Generative AI in language educatio
 
 \bibitem{b40}
 L. Kohnke, B. L. Moorhouse, and D. Zou, ``{ChatGPT} for Language Teaching and Learning,'' \textit{RELC J.}, vol. 54, no. 2, pp. 537--550, 2023. [Online]. Available: \url{https://doi.org/10.1177/00336882231162868}
+
+\bibitem{b41}
+J. Colpaert, ``Design of online interactive language courseware: Conceptualization, specification and prototyping,'' Ph.D. dissertation, Univ. Antwerp, Antwerp, Belgium, 2004.
+
+\bibitem{b42}
+M. A. Almaiah, ``Evaluating the quality factors of mobile learning system success using a new synergistic model,'' \textit{Int. J. Advanced Technology and Engineering Exploration}, vol. 10, no. 111, 2021. [Online]. Available: \url{https://doi.org/10.19101/ijece.2020.10.111}
+
+\bibitem{b43}
+V. Venkatesh, M. G. Morris, G. B. Davis, and F. D. Davis, ``User acceptance of information technology: Toward a unified view,'' \textit{MIS Quart.}, vol. 27, no. 3, pp. 425--478, 2003. [Online]. Available: \url{https://doi.org/10.2307/30036540}
+
+\bibitem{b44}
+R. K. Kampa, ``Combining technology readiness and acceptance model for investigating the acceptance of m-learning in higher education in India,'' \textit{Asian Assoc. Open Univ. J.}, vol. 18, no. 2, pp. 105--120, 2023. [Online]. Available: \url{https://doi.org/10.1108/aaouj-10-2022-0149}
+
+\bibitem{b45}
+M. Essafi, ``The Impact of Demographics on Moroccan University Students' Perceptions and Acceptance of Mobile-Assisted Language Learning (MALL),'' \textit{Int. J. English Literature and Social Sciences}, vol. 7, no. 1, pp. 109--118, 2025. [Online]. Available: \url{https://doi.org/10.32996/ijels.2025.7.1.13}
 
 \end{thebibliography}
 
