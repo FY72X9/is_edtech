@@ -5,9 +5,10 @@
   "p_max_below_4_0": 1.0,
   "p_D4_gap_persists": 1.0,
   "weighted_sensitivity_n": 100000,
-  "dominance_probability": 0.85805,
-  "min_dominance_margin": -0.5412753376639949,
-  "mean_dominance_margin": 0.16617131546498382,
+  "dominance_probability": 0.89762,
+  "min_dominance_margin": -0.5124564187594912,
+  "mean_dominance_margin": 0.19516767268552998,
+  "complexity_tipping_point": 0.14,
   "lp_max_D4_convex": 0.5,
   "gap_persistence_per_dim": {
     "D1_TECH": 1.0,
@@ -67,7 +68,7 @@
       "ci_lo": 0.31035547272246045,
       "ci_hi": 0.6905252696945837
     },
-    "F11 TRAM/Kampa (2024)": {
+    "F11 TRAM/Kampa (2023)": {
       "mean": 1.0016523636013561,
       "ci_lo": 0.688053154318778,
       "ci_hi": 1.3122433909020053

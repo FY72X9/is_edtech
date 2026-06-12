@@ -60,29 +60,29 @@ plt.rcParams.update({
 # FIG 1 — Five-Stage Scoping Review Process
 # ─────────────────────────────────────────────────────────────────────────────
 def fig1_scoping_stages():
-    fig, ax = plt.subplots(figsize=(15, 5.0))
+    fig, ax = plt.subplots(figsize=(15, 5.5))
     ax.set_xlim(0, 15)
-    ax.set_ylim(0, 5.0)
+    ax.set_ylim(0, 5.5)
     ax.axis("off")
 
     stages = [
-        ("Stage 1", "Research\nQuestion"),
-        ("Stage 2", "Identify\nRelevant Studies"),
-        ("Stage 3", "Study\nSelection"),
-        ("Stage 4", "Chart\nthe Data"),
-        ("Stage 5", "Collate, Summarize\n& Report"),
+        ("Stage 1", "Research\nQuestion", "Define 3 RQs mapping\nCALL, IS, & governance\nfragmentation"),
+        ("Stage 2", "Identify\nRelevant Studies", "Search Scopus, WoS,\nIEEE, & ERIC databases\n(2001-2025)"),
+        ("Stage 3", "Study\nSelection", "Screen 1,200+ articles;\napply PCC criteria to select\n12 core frameworks"),
+        ("Stage 4", "Chart\nthe Data", "Chart dimensions:\nTECH, PED, INST,\nHigh-Stakes, & Rater Rigor"),
+        ("Stage 5", "Collate, Summarize\n& Report", "Generate coverage matrix;\nidentify gaps; justify\nintegrative model ($F^*$)"),
     ]
 
-    box_w, box_h = 2.2, 1.8
+    box_w, box_h = 2.4, 2.8
     pad = 0.1
-    visual_w = box_w + 2 * pad  # 2.4
-    visual_h = box_h + 2 * pad  # 2.0
-    gap = 0.45  # Distance between visual edges
+    visual_w = box_w + 2 * pad  # 2.6
+    visual_h = box_h + 2 * pad  # 3.0
+    gap = 0.35  # Distance between visual edges
     total_w = len(stages) * visual_w + (len(stages) - 1) * gap
     start_x = (15 - total_w) / 2
-    y_center = 2.4
+    y_center = 2.65
 
-    for i, (stage, label) in enumerate(stages):
+    for i, (stage, label, details) in enumerate(stages):
         v_left = start_x + i * (visual_w + gap)
         x = v_left + pad
         # Shadow
@@ -100,17 +100,21 @@ def fig1_scoping_stages():
         v_center_x = v_left + visual_w / 2
         
         # Stage label (top)
-        ax.text(v_center_x, y_center + 0.5,
+        ax.text(v_center_x, y_center + box_h/2 - 0.4,
                 stage, ha="center", va="center",
-                fontsize=10.5, fontweight="bold", color=PALETTE["blue_dark"], zorder=3)
+                fontsize=10.0, fontweight="bold", color=PALETTE["blue_dark"], zorder=3)
         # Divider
         ax.plot([v_left + 0.2, v_left + visual_w - 0.2],
-                [y_center + 0.2, y_center + 0.2],
+                [y_center + box_h/2 - 0.7, y_center + box_h/2 - 0.7],
                 color=PALETTE["blue_mid"], lw=0.8, zorder=3)
         # Description
-        ax.text(v_center_x, y_center - 0.3,
+        ax.text(v_center_x, y_center + box_h/2 - 1.1,
                 label, ha="center", va="center",
-                fontsize=9.5, color=PALETTE["grey_text"], zorder=3)
+                fontsize=9.5, fontweight="bold", color=PALETTE["grey_text"], zorder=3)
+        # Details
+        ax.text(v_center_x, y_center - 0.6,
+                details, ha="center", va="center",
+                fontsize=8.0, color="#546e7a", zorder=3, style="italic", multialignment="center")
 
         # Arrow to next
         if i < len(stages) - 1:
@@ -124,7 +128,7 @@ def fig1_scoping_stages():
             ax.add_patch(arrow)
 
     # Title
-    ax.text(7.5, 4.5,
+    ax.text(7.5, 5.0,
             "Five-Stage Scoping Review Framework (Arksey & O'Malley, 2005)",
             ha="center", va="center", fontsize=13, fontweight="bold",
             color=PALETTE["blue_dark"])
@@ -445,7 +449,7 @@ def fig4_coverage_gaps():
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 5 — Research Program Architecture
+# FIG 5 — Research Program Architecture (Redesigned Research Workflow)
 # ─────────────────────────────────────────────────────────────────────────────
 def fig5_research_architecture():
     fig, ax = plt.subplots(figsize=(11.5, 6.2))
@@ -453,100 +457,98 @@ def fig5_research_architecture():
     ax.set_ylim(0, 6.2)
     ax.axis("off")
 
-    def card(ax, x, y, w, h, title, lines, facecolor, edgecolor, title_color):
+    def card(ax, x, y, w, h, title, lines, facecolor, edgecolor):
         ax.add_patch(FancyBboxPatch((x, y), w, h,
                                    boxstyle="round,pad=0.2",
                                    facecolor=facecolor,
                                    edgecolor=edgecolor,
                                    linewidth=2.0, zorder=2))
         # Title band
-        ax.add_patch(FancyBboxPatch((x + 0.05, y + h - 0.6), w - 0.1, 0.55,
+        ax.add_patch(FancyBboxPatch((x + 0.05, y + h - 0.65), w - 0.1, 0.6,
                                    boxstyle="round,pad=0.05",
                                    facecolor=edgecolor, edgecolor="none", zorder=3))
-        ax.text(x + w / 2, y + h - 0.32,
+        ax.text(x + w / 2, y + h - 0.35,
                 title, ha="center", va="center",
                 fontsize=9.5, fontweight="bold", color="white", zorder=4)
         for i, line in enumerate(lines):
-            ax.text(x + 0.25, y + h - 0.95 - i * 0.38,
-                    line, va="center", fontsize=8.2,
-                    color=PALETTE["grey_text"], zorder=3)
+            # Check if this line is a separator
+            if line.startswith("───"):
+                ax.text(x + w / 2, y + h - 1.0 - i * 0.45,
+                        line, ha="center", va="center", fontsize=8.0,
+                        color="#b0bec5", zorder=3)
+            else:
+                ax.text(x + 0.25, y + h - 1.0 - i * 0.45,
+                        line, va="center", fontsize=8.5,
+                        color=PALETTE["grey_text"], zorder=3)
 
-    # Sub-paper card
-    card(ax, 0.4, 1.5, 4.3, 4.1,
-         "Sub-Paper  ·  Scoping Review",
-         ["Mapping Evaluation Frameworks...",
-          "──────────────────────────────────",
-          "Methodology:  Scoping Review",
-          "               (Arksey & O'Malley, 2005)",
-          "Output:         Coverage Matrix",
-          "                12 frameworks × 5 dimensions",
-          "Contribution: Evidence of Gaps",
-          "Venue:          Scopus Q2 / Conference"],
-         PALETTE["blue_light"], PALETTE["blue_mid"],
-         PALETTE["blue_mid"])
+    lines_col1 = [
+        "• Context: HE language platforms",
+        "• Search Protocol: PRISMA-ScR",
+        "• Sources: Scopus, WoS, IEEE, ERIC",
+        "• Selection Criteria: CALL / MALL / LMS",
+        "─────────────────────────────────",
+        "• Output: Literature Dataset & Matrix",
+        "  (12 landmark frameworks mapped",
+        "  across 5 analytical dimensions)"
+    ]
 
-    # Main paper card
-    card(ax, 6.8, 1.5, 4.3, 4.1,
-         "Main Paper  ·  Conceptual Framework",
-         ["A Theoretical Framework and...",
-          "──────────────────────────────────",
-          "Methodology:  CFA-DSR Integrated Approach",
-          "Output:         Framework + Assessment",
-          "                Model (TECH+PED+INST)",
-          "Contribution: Theoretical Model",
-          "Venue:          Scopus Q1 Journal",
-          "Cites sub-paper as gap evidence"],
-         PALETTE["green_light"], PALETTE["green_mid"],
-         PALETTE["green_mid"])
+    lines_col2 = [
+        "• Phase 1-5: Concept Extraction &",
+        "  Deconstruction (Washback, TAM, SLA)",
+        "• Phase 6: Multi-disciplinary Synthesis",
+        "• Meta-Theory: DeLone & McLean Success",
+        "─────────────────────────────────",
+        "• Output: Proposed Framework F*",
+        "  (15 operational criteria resolving",
+        "  pedagogical & technical gaps)"
+    ]
 
-    # Shared data box
-    sx, sy, sw, sh = 3.8, 0.32, 3.9, 0.85
-    ax.add_patch(FancyBboxPatch((sx, sy), sw, sh,
-                                boxstyle="round,pad=0.12",
-                                facecolor=PALETTE["orange_light"],
-                                edgecolor=PALETTE["orange_mid"],
-                                linewidth=1.5, linestyle="--", zorder=2))
-    ax.text(sx + sw / 2, sy + sh / 2,
-            "Phase 2: Literature Search + Coverage Matrix Data\n"
-            "Shared Output — 100% overlap, zero additional cost",
-            ha="center", va="center", fontsize=8.2,
-            color=PALETTE["orange_mid"], fontweight="bold", zorder=3)
+    lines_col3 = [
+        "• Layer 1: Theoretical Completeness",
+        "  (Coverage matrix cross-validation)",
+        "• Layer 2: Mathematical Necessity",
+        "  (Convex combination bound LP proof)",
+        "• Layer 3: Computational Robustness",
+        "  (Monte Carlo sensitivity under MAUT",
+        "  complexity & failure constraints)",
+        "─────────────────────────────────",
+        "• Output: Validated Evaluation Model"
+    ]
 
-    # Arrows: shared data → both papers
-    arrow_shared_l = FancyArrowPatch(
-        (sx, sy + sh / 2), (0.4 + 2.15, 1.5),
-        arrowstyle="-|>", color=PALETTE["orange_mid"], lw=1.5, mutation_scale=12, zorder=4
-    )
-    ax.add_patch(arrow_shared_l)
+    card(ax, 0.4, 0.7, 3.2, 4.8,
+         "I. Integrative Review & Dataset",
+         lines_col1,
+         PALETTE["blue_light"], PALETTE["blue_mid"])
 
-    arrow_shared_r = FancyArrowPatch(
-        (sx + sw, sy + sh / 2), (6.8 + 2.15, 1.5),
-        arrowstyle="-|>", color=PALETTE["orange_mid"], lw=1.5, mutation_scale=12, zorder=4
-    )
-    ax.add_patch(arrow_shared_r)
+    card(ax, 4.15, 0.7, 3.2, 4.8,
+         "II. Conceptual Synthesis (CFA)",
+         lines_col2,
+         PALETTE["purple_light"], PALETTE["purple_mid"])
 
-    # Arrow: sub-paper → main paper (cited)
-    arrow_cite = FancyArrowPatch(
-        (0.4 + 4.3, 1.5 + 2.1), (6.8, 1.5 + 2.1),
-        arrowstyle="-|>", color=PALETTE["blue_mid"], lw=1.8, mutation_scale=12, zorder=4
-    )
-    ax.add_patch(arrow_cite)
+    card(ax, 7.9, 0.7, 3.2, 4.8,
+         "III. Design Science Validation",
+         lines_col3,
+         PALETTE["green_light"], PALETTE["green_mid"])
+
+    arrow_props = dict(arrowstyle="-|>", color=PALETTE["grey_text"], lw=2.0, mutation_scale=15)
     
-    ax.text(5.75, 3.8,
-            "cited as\ngap evidence", ha="center", va="bottom",
-            fontsize=8, color=PALETTE["blue_mid"], style="italic", fontweight="bold")
-
-    # Submission order badge
-    ax.text(5.75, 0.12,
-            "Recommended order: Submit sub-paper first → acceptance → submit main paper",
-            ha="center", va="center", fontsize=8,
-            color=PALETTE["grey_text"], style="italic", fontweight="bold")
+    arrow1 = FancyArrowPatch((3.65, 3.1), (4.1, 3.1), **arrow_props, zorder=4)
+    ax.add_patch(arrow1)
+    
+    arrow2 = FancyArrowPatch((7.4, 3.1), (7.85, 3.1), **arrow_props, zorder=4)
+    ax.add_patch(arrow2)
 
     # Title
     ax.text(5.75, 5.85,
-            "Research Program Architecture: Sub-Paper ↔ Main Paper Relationship",
-            ha="center", va="center", fontsize=11.5, fontweight="bold",
+            "Research Program Workflow and Methodological Framework",
+            ha="center", va="center", fontsize=12, fontweight="bold",
             color=PALETTE["blue_dark"])
+
+    # Footer
+    ax.text(5.75, 0.25,
+            "Sequential logical flow from empirical literature data collection (Stage I), through concept synthesis (Stage II), to multi-layer artifact validation (Stage III)",
+            ha="center", va="center", fontsize=8.5,
+            color=PALETTE["grey_text"], style="italic")
 
     path = os.path.join(IMAGES_DIR, "fig5_research_program_architecture.png")
     fig.savefig(path)

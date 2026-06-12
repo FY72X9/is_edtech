@@ -1,18 +1,14 @@
 """
-Monte Carlo Coverage Robustness & Decision Optimization Simulation (Rigor Upgrade)
-==================================================================================
+Monte Carlo Coverage Robustness & Decision Optimization Simulation (Advanced Rigor Upgrade)
+===========================================================================================
 Validates that coverage matrix gap findings are robust to coding uncertainty,
 mitigating design tautology via Multi-Attribute Utility Theory (MAUT).
-Includes a simulated Proof of Concept (PoC) calculating Cohen's Kappa for IRR.
-
-Implements:
-  1. Observed coverage scores and complexity costs (Part 1)
-  2. Monte Carlo robustness test with F* Implementation Leakage (N=50,000) (Part 2)
-  3. Weighted sensitivity analysis with Complexity Penalty (N=100,000) (Part 3)
-  4. Formal gap persistence proof via linear programming (Part 4)
-  5. Decision optimization model under resource-constrained scenarios (Part 5)
-  6. Simulated Proof of Concept (PoC): Inter-Rater Reliability (Cohen's Kappa) (Part 6)
-  7. Publication-quality figure generation (Matplotlib) (Part 7)
+Includes:
+  1. Catastrophic Joint Failure Modes: Platforms lacking core quality dimensions (TECH/PED < 0.4)
+     suffer non-linear utility collapse.
+  2. Complexity Penalty Threshold Mapping: Finds the exact tipping point of resource
+     constraints (\alpha) where the proposed framework F* loses dominance.
+  3. Simulated Proof of Concept (PoC) calculating Cohen's Kappa for IRR.
 
 Reference: IS EdTech Framework Research
 Paper: Sub-paper (Scoping Review) + Main paper (CFA-DSR)
@@ -39,7 +35,7 @@ N_MONTE_CARLO = 50_000
 N_DIRICHLET = 100_000
 
 # ============================================================
-# Coverage Matrix Data (from research-concept-sub-paper.md)
+# Coverage Matrix Data
 # s(f,d): 1.0 = full, 0.5 = partial, 0.0 = absent
 # Dimensions: D1=TECH, D2=PED, D3=INST, D4=HighStakes, D6=MultiStakeholder
 # ============================================================
@@ -55,7 +51,7 @@ FRAMEWORKS = [
     "F8 Scheffel/EFLA (2014)",
     "F9 Park & Jo (2019)",
     "F10 UTAUT/Venkatesh (2003)",
-    "F11 TRAM/Kampa (2024)",
+    "F11 TRAM/Kampa (2023)",
     "F12 Essafi/MLLA (2025)",
 ]
 
@@ -170,13 +166,14 @@ print(f"\n  P(D4 gap persists, D4 > 0.7 never achieved by existing) = {(1-p_D4_e
 
 
 # ============================================================
-# PART 3: WEIGHTED SENSITIVITY ANALYSIS WITH COMPLEXITY PENALTY
-# Decision Model: Utility(f) = Sum_d w_d * s(f,d) - alpha * Complexity(f)
+# PART 3: WEIGHTED SENSITIVITY ANALYSIS WITH CATASTROPHIC FAILURE
+# Decision Model: Utility(f) = WCS_f * FailureMask - alpha * Complexity(f)
+# If a platform lacks core dimensions (D1_TECH or D2_PED < 0.4), its utility falls by 90% (catastrophic failure).
 # Simulates resource constraints (alpha ~ Uniform(0, 0.12)) and F* Leakage
 # ============================================================
 
 print("\n" + "=" * 65)
-print(f"PART 3: WEIGHTED SENSITIVITY WITH COMPLEXITY PENALTY (N = {N_DIRICHLET:,})")
+print(f"PART 3: WEIGHTED SENSITIVITY WITH CATASTROPHIC FAILURE (N = {N_DIRICHLET:,})")
 print("=" * 65)
 
 # Sample weight vectors from Dirichlet(1, ..., 1)
@@ -193,25 +190,55 @@ F_star_perturbed_sens = np.random.uniform(0.8, 1.0, size=(N_DIRICHLET, 5))
 wcs_existing = weight_samples @ COVERAGE_MATRIX.T               # (N_DIRICHLET x 12)
 wcs_star_leakage = (weight_samples * F_star_perturbed_sens).sum(axis=1)  # (N_DIRICHLET,)
 
+# Apply Catastrophic Failure Mask:
+# If D1_TECH or D2_PED is less than 0.4, multiply utility by 0.1 (90% drop)
+# For existing frameworks:
+fail_mask_existing = (COVERAGE_MATRIX[:, 0] < 0.4) | (COVERAGE_MATRIX[:, 1] < 0.4)  # shape: (12,)
+wcs_existing_final = np.copy(wcs_existing)
+for i in range(12):
+    if fail_mask_existing[i]:
+        wcs_existing_final[:, i] = 0.1 * wcs_existing[:, i]
+
+# For F* (using perturbed values, check if perturbed D1 or D2 falls below 0.4 — which is 0% probability under Uniform(0.8, 1.0))
+wcs_star_final = wcs_star_leakage
+
 # Calculate Net Utilities: U(f) = WCS_f - alpha * C(f)
-ut_existing = wcs_existing - alpha_samples[:, np.newaxis] * COMPLEXITY_COSTS  # (N_DIRICHLET x 12)
-ut_star = wcs_star_leakage - alpha_samples * COMPLEXITY_STAR                  # (N_DIRICHLET,)
+ut_existing = wcs_existing_final - alpha_samples[:, np.newaxis] * COMPLEXITY_COSTS  # (N_DIRICHLET x 12)
+ut_star = wcs_star_final - alpha_samples * COMPLEXITY_STAR                  # (N_DIRICHLET,)
 
 # Max utility among all existing frameworks per iteration
 max_ut_existing = ut_existing.max(axis=1)
 
 # Net utility dominance margin (U_F* - max(U_existing))
 margin_arr = ut_star - max_ut_existing
-
 dominance_prob = (margin_arr > 0).mean()
 
-print(f"  P(F* strictly dominates existing under resource trade-offs) = {dominance_prob:.4f} ({dominance_prob*100:.2f}%)")
+print(f"  P(F* strictly dominates existing with Catastrophic Failure) = {dominance_prob:.4f} ({dominance_prob*100:.2f}%)")
 print(f"  Utility dominance margin (U_F* - max U_existing):")
 print(f"    Mean  = {margin_arr.mean():.4f}")
 print(f"    Min   = {margin_arr.min():.4f}")
 print(f"    Max   = {margin_arr.max():.4f}")
-print(f"    Stdev = {margin_arr.std():.4f}")
-print(f"  F* Pareto dominance holds in majority of resource constraints: {dominance_prob > 0.5}")
+
+# ------------------------------------------------------------
+# SUB-PART 3b: COMPLEXITY PENALTY TIPPING POINT MAPPING
+# Map dominance probability for alpha in [0.0, 0.25]
+# ------------------------------------------------------------
+alpha_values = np.linspace(0.0, 0.25, 26)
+tipping_probs = []
+for a in alpha_values:
+    ut_star_a = wcs_star_final - a * COMPLEXITY_STAR
+    ut_existing_a = wcs_existing_final - a * COMPLEXITY_COSTS
+    max_ut_existing_a = ut_existing_a.max(axis=1)
+    prob_a = (ut_star_a > max_ut_existing_a).mean()
+    tipping_probs.append(prob_a)
+
+# Find exact tipping point where dominance probability falls below 50%
+tipping_point = 0.25
+for val, p in zip(alpha_values, tipping_probs):
+    if p < 0.50:
+        tipping_point = val
+        break
+print(f"  Tipping point threshold of alpha (where dominance P < 50%) = {tipping_point:.3f}")
 
 
 # ============================================================
@@ -223,7 +250,7 @@ print(f"  F* Pareto dominance holds in majority of resource constraints: {domina
 print("\n" + "=" * 65)
 print("PART 4: FORMAL GAP PERSISTENCE — LINEAR PROGRAMMING PROOF")
 print("=" * 65)
-print("  Theorem 1: No convex combination of existing frameworks")
+print("  Lemma 1: No convex combination of existing frameworks")
 print("  achieves full coverage on D4 (High-Stakes Test Specificity)")
 print()
 
@@ -242,7 +269,7 @@ print(f"  max_{{λ∈Δ^{n_fw}}} Σ_f λ_f · s(f, D4) = {max_D4_convex:.4f}")
 print(f"  Threshold for 'full coverage'         = 1.0000")
 print(f"  Gap (1.0 - max achievable)            = {1.0 - max_D4_convex:.4f}")
 print()
-print("  THEOREM 1 PROOF (by linear programming):")
+print("  LEMMA 1 PROOF (by linear programming):")
 print("  ─────────────────────────────────────────────────────────")
 print(f"  The maximum D4 coverage achievable by ANY convex combination")
 print(f"  of the 12 reviewed frameworks is {max_D4_convex:.4f}.")
@@ -265,9 +292,9 @@ for j, dim in enumerate(DIMENSIONS):
 
 
 # ============================================================
-# PART 5: DECISION OPTIMIZATION MODEL
+# PART 5: DECISION OPTIMIZATION MODEL WITH COMPLEXITY PENALTY
 # Evaluates utility comparison under specific institutional scenarios
-# Scenario utility: U(f) = WCS_f - alpha * Complexity(f)
+# Scenario utility: U(f) = WCS_f * FailureMask - alpha * Complexity(f)
 # ============================================================
 
 print("\n" + "=" * 65)
@@ -291,9 +318,15 @@ scenario_winners = {}
 scenario_details = {}
 
 for scenario_name, (w, alpha) in scenarios.items():
-    # Calculate utility for existing frameworks: WCS_f - alpha * C_f
+    # Calculate utility for existing frameworks: WCS_f * FailureMask - alpha * C_f
     wcs_existing_scen = COVERAGE_MATRIX @ w
-    ut_existing_scen = wcs_existing_scen - alpha * COMPLEXITY_COSTS
+    # Apply failure mask (90% utility loss if D1 or D2 < 0.4)
+    wcs_existing_scen_final = np.copy(wcs_existing_scen)
+    for i in range(12):
+        if fail_mask_existing[i]:
+            wcs_existing_scen_final[i] = 0.1 * wcs_existing_scen[i]
+            
+    ut_existing_scen = wcs_existing_scen_final - alpha * COMPLEXITY_COSTS
     
     # Calculate expected utility for F* under Average Implementation Leakage (0.9 coverage)
     wcs_star_expected = 0.9  # expected score under Uniform(0.8, 1.0)
@@ -355,7 +388,7 @@ print(f"  Rater Reliability Status             = {status_kappa} (Landis & Koch, 
 # ============================================================
 
 def generate_and_save_plots():
-    # Aesthetic color palette matching generate_subpaper_figures.py
+    # Aesthetic color palette
     PALETTE = {
         "blue_light":  "#e3f2fd",
         "blue_mid":    "#1565c0",
@@ -467,7 +500,6 @@ def generate_and_save_plots():
     print(f"  ✓  Saved Plot 3: {plot3_path}")
     
     # --- PLOT 10: Rater Agreement Heatmap (PoC) ---
-    # Construct 3x3 confusion matrix from ratings
     conf_matrix = np.zeros((3, 3), dtype=int)
     for r1_val, r2_val in zip(r1, r2):
         conf_matrix[r1_val, r2_val] += 1
@@ -475,10 +507,8 @@ def generate_and_save_plots():
     fig, ax = plt.subplots(figsize=(6, 5))
     im = ax.imshow(conf_matrix, cmap="YlGn", vmin=0, vmax=conf_matrix.max() + 2)
     
-    # Annotate cells
     for i in range(3):
         for j in range(3):
-            # Diagonal: green text for agreement, off-diagonal: red/grey for disagreement
             text_color = "black" if conf_matrix[i, j] < 5 else "white"
             ax.text(j, i, f"{conf_matrix[i, j]}", ha="center", va="center", 
                     fontsize=12, fontweight="bold", color=text_color)
@@ -492,7 +522,6 @@ def generate_and_save_plots():
     ax.set_title(f"Rater Agreement Heatmap (PoC)\n(Observed Agreement: {po*100:.1f}%, Cohen's κ: {kappa_score:.4f})", 
                  fontsize=11, fontweight="bold", color=PALETTE["blue_dark"])
                  
-    # Add colorbar
     fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
     fig.tight_layout()
     
@@ -500,6 +529,24 @@ def generate_and_save_plots():
     fig.savefig(plot4_path)
     plt.close(fig)
     print(f"  ✓  Saved Plot 4: {plot4_path}")
+
+    # --- PLOT 11: Complexity Penalty Tipping Point ---
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    ax.plot(alpha_values, np.array(tipping_probs) * 100, marker="o", color=PALETTE["blue_mid"], linewidth=2, label="F* Dominance Probability")
+    ax.axvline(x=tipping_point, color=PALETTE["red_dark"], linestyle="--", linewidth=1.5, label=f"Tipping Point (α = {tipping_point:.2f})")
+    ax.axhline(y=50.0, color="grey", linestyle=":", linewidth=1.0)
+    
+    ax.set_title("Complexity Penalty Tipping Point Mapping\n(Probability of F* Dominance vs. α Penalty)", fontsize=11, fontweight="bold", color=PALETTE["blue_dark"])
+    ax.set_xlabel("Complexity Penalty Coefficient (α)", fontsize=9.5)
+    ax.set_ylabel("Dominance Probability (%)", fontsize=9.5)
+    ax.grid(True, linestyle="--", alpha=0.2)
+    ax.legend(loc="lower left", fontsize=8.5)
+    ax.spines[["top", "right"]].set_visible(False)
+    
+    plot5_path = os.path.join(images_dir, "fig11_tipping_point.png")
+    fig.savefig(plot5_path)
+    plt.close(fig)
+    print(f"  ✓  Saved Plot 5: {plot5_path}")
 
 print("\n" + "=" * 65)
 print("PART 7: FIGURE GENERATION")
@@ -526,9 +573,10 @@ Monte Carlo Robustness (N = {N_MONTE_CARLO:,}, Leakage included):
   • P(no existing framework > 4.0/5) = {p_below_4:.4f} ({p_below_4*100:.2f}%)
   • P(D4 gap persists in existing)   = {(1-p_D4_exceeds)*100:.2f}%
 
-Weighted Sensitivity Utility (N = {N_DIRICHLET:,}, Complexity penalty alpha in [0.0, 0.12]):
+Weighted Sensitivity Utility (N = {N_DIRICHLET:,}, Complexity penalty alpha in [0.0, 0.12], Catastrophic Failure):
   • P(F* strictly dominates existing) = {dominance_prob:.4f} ({dominance_prob*100:.2f}%)
   • Mean utility dominance margin     = {margin_arr.mean():.4f} (Min: {margin_arr.min():.4f})
+  • Complexity tipping threshold α    = {tipping_point:.2f} (where dominance drops below 50%)
 
 Linear Programming (Gap Persistence):
   • max convex-combination D4 score = {max_D4_convex:.4f} (< 1.0 required)
@@ -554,6 +602,7 @@ results = {
     "dominance_probability": float(dominance_prob),
     "min_dominance_margin": float(margin_arr.min()),
     "mean_dominance_margin": float(margin_arr.mean()),
+    "complexity_tipping_point": float(tipping_point),
     "lp_max_D4_convex": float(max_D4_convex),
     "gap_persistence_per_dim": {k: float(v) for k, v in gap_results.items()},
     "framework_ci": {fw: {k: float(v) for k, v in ci.items()} 

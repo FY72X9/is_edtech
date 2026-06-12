@@ -60,6 +60,15 @@ Following Jabareen (2009)~[b6], the framework was developed through eight iterat
 
 \subsection{Integrative Review Protocol as CFA Data Source}
 
+The literature data collection and selection follow Arksey and O'Malley's (2005) five-stage scoping review framework, as mapped in Figure~\ref{fig:scoping_stages}. This process ensures a systematic, reproducible method for compiling the comparative database of evaluation frameworks.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{fig1_scoping_review_stages}
+  \caption{Five-stage scoping review process (Arksey \& O'Malley, 2005) showing study-specific execution details.}
+  \label{fig:scoping_stages}
+\end{figure*}
+
 Following Torraco (2005)~[b8], an integrative review was used to collect conceptual data. Unlike systematic reviews designed to aggregate effect sizes, the integrative review enables conceptual synthesis across empirical and theoretical literature to support theory development. The review protocol was guided by the question: *``What evaluation frameworks exist for digital educational platforms, and what assessment dimensions do they address or neglect in the context of higher education language learning?''* The search string combined keywords addressing educational technology evaluation, university context, and language learning. To operationalize this search, the scoping review protocol is structured around the Population-Concept-Context (PCC) framework recommended by Munn et al. (2018) for scoping reviews. Figure~fig:pcc_dims illustrates the relationship between these PCC scoping review elements and the three analytical dimensions of our theoretical framework. The Population element (learners, instructors, and administrators in higher education) and the Context element (institutional quality assurance and technology procurement) map directly onto the Institutional Governance (INST) dimension. Meanwhile, the Concept element (evaluation frameworks for digital language platforms) bridges the Technology Architecture (TECH) and Pedagogy Effectiveness (PED) dimensions, ensuring that both system quality and educational content are captured. This alignment guarantees that our literature search systematically extracts and maps the intersection of technical, pedagogical, and administrative requirements.
 
 \subsection{Mathematical Framework Specification}

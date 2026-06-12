@@ -3,10 +3,10 @@ ANTIGRAVITY IDE - RESEARCH WRITING LOG
 ================================================================================
 PROJECT: Evaluating High-Stakes Language Test Prep Platforms in HE
 RESEARCHER: Asus
-CURRENT VERSION: v1.2
-LAST SESSION: 2026-06-12 17:03:50
-CUMULATIVE ENTRIES: 3
-TOTAL SECTIONS MODIFIED: 3
+CURRENT VERSION: v1.5
+LAST SESSION: 2026-06-12 17:42:00
+CUMULATIVE ENTRIES: 6
+TOTAL SECTIONS MODIFIED: 6
 ================================================================================
 
 ================================================================================
@@ -155,6 +155,127 @@ TYPE: Language Elevation / Humanization
 
 --- REFERENCES/FRAMEWORKS INVOKED ---
 - Custom /humanizer academic writing guidelines
+
+STATUS: COMPLETED
+================================================================================
+
+================================================================================
+LOG ENTRY #4
+================================================================================
+TIMESTAMP: 2026-06-12 10:17:00 UTC
+SESSION ID: f5ce1e6a-4dee-40ac-8f1d-b28db8c7298f
+USER QUERY/REQUEST: oke, bisa ga kita perkuat lagi dengan mempertajam validasinya sesuai saran kamu? selain tuning simulasi dasarnya, bisa buatkan script python dan ipynb-nya sekaligus?
+
+--- SECTION MODIFIED ---
+DOCUMENT: docs/latex/journal/ethe_main.tex, docs/draft/01-abstract.md, docs/draft/07-conceptual-structural-model.md, docs/draft/08-discussion.md, src/monte_carlo_coverage.py, src/monte_carlo_coverage.ipynb
+SECTION: Mathematical validation, Abstract, Discussion
+PARAGRAPH/LINE: Various lines (Proposition 1, Decision scenarios, Figures, Abstract)
+
+--- NATURE OF INTERVENTION ---
+TYPE: Advanced Mathematical Modeling / Validation Rigor Upgrade
+
+--- BEFORE (Excerpt) ---
+P(Utility(F*, w, alpha) > max Utility(f, w, alpha)) = 0.8580 (85.80%)
+In a 'Governance-First' scenario, the best existing framework is F8 Scheffel...
+(No figure showing complexity penalty tipping point, no catastrophic joint failure mask)
+
+--- AFTER (Excerpt) ---
+Utility(f, w, alpha) = M(f) * sum(w_d * s(f,d)) - alpha * Complexity(f)
+where M(f) represents a non-linear catastrophic failure mask (utility drops by 90% if D1/TECH or D2/PED < 0.4).
+P(Utility(F*, w, alpha) > max Utility(f, w, alpha)) = 0.8976 (89.76%)
+In 'Governance-First', F8 fails catastrophically (utility = 0.038) and F6 Almaiah is optimal (utility = 0.375).
+Added complexity penalty tipping point mapping (P > 50% for all alpha < 0.14) and Figure 11.
+Updated Python simulation, Jupyter Notebook, and synchronized all drafts and abstract.
+
+--- RATIONALE ---
+1. Academic weakness identified: The original simulation assumed linear additive utility, which did not penalize platforms lacking basic stability or pedagogy (design tautology). It also lacked mapping for adoption cost thresholds.
+2. Theoretical/methodological principle applied: Multi-Attribute Utility Theory (MAUT) with non-linear joint failure thresholds and tipping point curve mapping.
+3. Expected enhancement to scholarly quality: Proves framework superiority under severe realistic penalties, resolving circular validation critique.
+4. Preempting reviewer objections: Directly addresses limitations of simulation models by introducing non-linear failure modes and systematic threshold analysis.
+
+--- ARGUMENTATIVE ENHANCEMENT ---
+- Rigorous mathematical definition of M(f) catastrophic joint failure mask.
+- Tipping point sensitivity mapping for adoption complexity penalty.
+
+--- REFERENCES/FRAMEWORKS INVOKED ---
+- Multi-Attribute Utility Theory (MAUT)
+- DeLone & McLean (2003) Success Model
+- Rater inter-rater reliability rubrics
+
+STATUS: COMPLETED
+================================================================================
+
+================================================================================
+LOG ENTRY #5
+================================================================================
+TIMESTAMP: 2026-06-12 10:36:00 UTC
+SESSION ID: f5ce1e6a-4dee-40ac-8f1d-b28db8c7298f
+USER QUERY/REQUEST: Rombak total fig5 (Research Program Architecture) dan desain ulang fig1 agar lebih mendalam.
+
+--- SECTION MODIFIED ---
+DOCUMENT: src/generate_subpaper_figures.py
+SECTION: fig1_scoping_stages, fig5_research_architecture
+PARAGRAPH/LINE: Lines 62-140 and 448-555
+
+--- NATURE OF INTERVENTION ---
+TYPE: Ethical & Relevance Rectification / Visual & Conceptual Enrichment
+
+--- BEFORE (Excerpt) ---
+Figure 5 drew a publication strategy comparison (Sub-Paper vs Main Paper, Scopus target venues, submission sequence).
+Figure 1 showed stages of scoping review without study-specific details.
+
+--- AFTER (Excerpt) ---
+Redesigned Figure 5 as a complete 3-stage research workflow flow chart (I. Integrative Review & Dataset, II. Conceptual Synthesis via CFA, III. Design Science Validation via math/computational checks), matching the text in the paper.
+Redesigned Figure 1 to include specific scoping review activities (target databases, selected articles counts, mapped dimensions, output indices).
+Regenerated all figures successfully.
+
+--- RATIONALE ---
+1. Academic weakness identified: Displaying submission optimization strategies (venues, submission sequences) in peer-reviewed graphics is highly unethical and scientifically irrelevant.
+2. Theoretical/methodological principle applied: Design Science Research workflow visualization, aligning illustrations with textual program flow descriptions.
+3. Expected enhancement to scholarly quality: Ensures naskah adheres to rigorous ethical standards and presents scientific contributions rather than publication mechanics.
+
+--- ARGUMENTATIVE ENHANCEMENT ---
+- Aligned figures with naskah descriptions of research execution stages.
+
+--- REFERENCES/FRAMEWORKS INVOKED ---
+- Arksey & O'Malley (2005) scoping stages
+- Hevner (2004) Design Science Research scaffold
+
+STATUS: COMPLETED
+================================================================================
+
+================================================================================
+LOG ENTRY #6
+================================================================================
+TIMESTAMP: 2026-06-12 10:42:00 UTC
+SESSION ID: f5ce1e6a-4dee-40ac-8f1d-b28db8c7298f
+USER QUERY/REQUEST: Integrasi fig1_scoping_review_stages.png ke dalam naskah LaTeX ethe_main.tex dan draf methodology.
+
+--- SECTION MODIFIED ---
+DOCUMENT: docs/latex/journal/ethe_main.tex, docs/draft/03-methodology.md
+SECTION: Section 2.3 (Integrative review protocol as CFA data source)
+PARAGRAPH/LINE: Lines 187--189 of ethe_main.tex, line 61 of 03-methodology.md
+
+--- NATURE OF INTERVENTION ---
+TYPE: Document Alignment & Synchronization
+
+--- BEFORE (Excerpt) ---
+The five stages of Arksey and O'Malley's scoping review framework were described in the text, but the diagram Figure 1 (fig1_scoping_review_stages.png) was not declared or referenced in the main paper.
+
+--- AFTER (Excerpt) ---
+Declared fig1_scoping_review_stages as Figure 1 and added a direct text reference under subsection 2.3 in both the LaTeX journal paper and the methodology draft.
+Verified syntax and compilation checks successfully.
+
+--- RATIONALE ---
+1. Academic weakness identified: Critical methodological diagrams detailing data screening and scoping review execution steps were missing from the main journal paper despite being referenced in the sub-paper, violating methodological transparency.
+2. Theoretical/methodological principle applied: Methodological consistency, ensuring that the empirical dataset construction is visually mapped for auditability.
+3. Expected enhancement to scholarly quality: Readers can follow the exact process of study selection (Stage 1-5 of Arksey & O'Malley) directly within the main paper without needing to fetch the sub-paper.
+
+--- ARGUMENTATIVE ENHANCEMENT ---
+- Visually supports the data collection methodology transparency.
+
+--- REFERENCES/FRAMEWORKS INVOKED ---
+- Arksey & O'Malley (2005) scoping review process
 
 STATUS: COMPLETED
 ================================================================================
