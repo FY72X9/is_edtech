@@ -23,7 +23,7 @@
 
 % ── Graphics ─────────────────────────────────────────────────
 \usepackage{graphicx}
-\graphicspath{{images/}}
+\graphicspath{{../../../images/}}
 
 % ── Tables ───────────────────────────────────────────────────
 \usepackage{booktabs}
@@ -592,9 +592,9 @@ To test if the gap findings are sensitive to coding variations, partial coding e
     \textbf{Framework} & \textbf{Expected Score} & \textbf{95\% Confidence Interval} \\
     \midrule
     F1 Chapelle (2001)~\cite{b1} & 1.500 & [1.310, 1.690] \\
-    F2 Hubbard (2011)~\cite{b2} & 1.000 & [1.000, 1.000] \\
+    F2 Hubbard (2011)~\cite{b2} & 1.000 & [1.000, 1.000]$^{\dagger}$ \\
     F3 Leakey (2011)~\cite{b3} & 1.500 & [1.310, 1.690] \\
-    F4 Colpaert (2004) & 1.000 & [1.000, 1.000] \\
+    F4 Colpaert (2004) & 1.000 & [1.000, 1.000]$^{\dagger}$ \\
     F5 Rosell-Aguilar (2017)~\cite{b5} & 1.000 & [0.691, 1.309] \\
     F6 Almaiah et al. (2021) & 2.500 & [2.114, 2.885] \\
     F7 Al-Fraihat et al. (2020)~\cite{b4} & 2.501 & [2.113, 2.886] \\
@@ -607,6 +607,8 @@ To test if the gap findings are sensitive to coding variations, partial coding e
     \bottomrule
   \end{tabular}
 \end{table}
+
+\footnotetext[$\dagger$]{Frameworks F2 and F4 contain no partial (◑~=~0.5) coverage entries; therefore, no stochastic perturbation is applied and their confidence interval collapses to a point estimate at the nominal score.}
 
 The simulation reports:
 \begin{itemize}
@@ -707,7 +709,7 @@ The model carries practical implications for developers, instructors, and admini
     \textbf{Stakeholder} & \textbf{Practical Implication} & \textbf{Framework Utilization} \\
     \midrule
     \textbf{EdTech Developers} & Evidence-based architectural and design guidelines & Apply TECH and PED rubrics as system design specifications. \\
-    \textbf{University Administrators} & Justification for adopsi and quality assurance benchmarks & Apply INST rubrics and structural model for platform benchmarking. \\
+    \textbf{University Administrators} & Justification for adoption and quality assurance benchmarks & Apply INST rubrics and structural model for platform benchmarking. \\
     \textbf{Researchers} & Theoretical foundation for empirical field studies & Apply propositions P1--P8 as testable hypotheses for SEM analysis. \\
     \bottomrule
   \end{tabular}
@@ -880,7 +882,7 @@ D. Yan, ``Automated Writing Evaluation in the Era of Large Language Models: A Co
 B. L. Moorhouse, K. M. Wong, and L. Kohnke, ``Generative AI in language education: Practices, opportunities, and challenges,'' \textit{Int. J. Educ. Technol. High. Educ.}, vol. 20, no. 1, p. 45, 2023.
 
 \bibitem{b40}
-L. Kohnke, B. L. Moorhouse, and K. M. Wong, ``ChatGPT for Language Teaching and Learning,'' \textit{TESOL Quart.}, vol. 57, no. 2, pp. 537--550, 2023.
+L. Kohnke, B. L. Moorhouse, and D. Zou, ``{ChatGPT} for Language Teaching and Learning,'' \textit{RELC J.}, vol. 54, no. 2, pp. 537--550, 2023. [Online]. Available: \url{https://doi.org/10.1177/00336882231162868}
 
 \end{thebibliography}
 

@@ -1,0 +1,55 @@
+{
+  "framework_id": "F7",
+  "citation": "Al-Fraihat, D., Joy, M., Masa'deh, R., & Sinclair, J. (2020). Evaluating e-learning systems success: An empirical study. Computers in Human Behavior, 102, 67-86.",
+  "type": "Journal Article",
+  "discipline": "Information Systems / E-learning",
+  "year": 2020,
+  "context": "E-learning systems in higher education (LMS)",
+  "index_status": "Scopus Q1 (Computers in Human Behavior, Elsevier). Verified via OpenAlex: W2968091587. Cited by 1,240.",
+  "openalex_id": "W2968091587",
+  "doi": "10.1016/j.chb.2019.08.004",
+  "doi_verified": true,
+  "doi_verified_date": "2026-06-12",
+  "doi_verified_via": "OpenAlex API",
+  "is_retracted": false,
+  "extraction_date": "2026-06-12",
+  "dimensional_coding": {
+    "D1_TECH": {
+      "score": 1.0,
+      "symbol": "✓",
+      "evidence": "Framework includes System Quality (reliability, functionality, response time, ease of use) and Technical Infrastructure quality as explicit dimensions. Operationalized through survey items validated empirically.",
+      "confidence": "high"
+    },
+    "D2_PED": {
+      "score": 0.5,
+      "symbol": "◑",
+      "evidence": "Information/Content Quality is included (accuracy, relevance, completeness). However, content quality is generic IS quality — no domain-specific operationalization for language learning, SLA principles, feedback theory, or test alignment.",
+      "confidence": "high"
+    },
+    "D3_INST": {
+      "score": 0.5,
+      "symbol": "◑",
+      "evidence": "Includes Service Quality and Support (instructor responsiveness, technical support). However, does not cover learning analytics dashboards, data interoperability standards (LTI/xAPI), or administrative decision-support specifically.",
+      "confidence": "high"
+    },
+    "D4_HighStakes": {
+      "score": 0.0,
+      "symbol": "✗",
+      "evidence": "No coverage of high-stakes test specificity, IELTS/TOEFL rubric alignment, CEFR descriptors, washback, micro-learning, or spaced repetition. Framework is generic e-learning quality.",
+      "confidence": "high"
+    },
+    "D6_MultiStakeholder": {
+      "score": 0.5,
+      "symbol": "◑",
+      "evidence": "Framework considers both learner and instructor perspectives in its empirical study design. Administrator perspective is partially addressed via Institutional Support dimension but not fully operationalized.",
+      "confidence": "medium"
+    },
+    "D5_Rigor_separate": {
+      "symbol": "◑",
+      "evidence": "Provides validated survey items (CFA confirmed) for most dimensions. However, some items rely on self-report perception rather than objective platform measurement criteria."
+    }
+  },
+  "coverage_score": 2.5,
+  "coder": "Primary coder (conceptual analysis)",
+  "notes": "Highest-scoring IS framework in corpus. Strong technical coverage but lacks language domain specificity entirely. Serves as the best existing IS-domain evaluation model for general e-learning."
+}

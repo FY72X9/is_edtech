@@ -1,0 +1,53 @@
+{
+  "framework_id": "F1",
+  "citation": "Chapelle, C. A. (2001). Computer Applications in Second Language Acquisition: Foundations for Teaching, Testing and Research. Cambridge University Press.",
+  "type": "Book",
+  "discipline": "Applied Linguistics / CALL",
+  "year": 2001,
+  "context": "Computer-Assisted Language Learning (CALL)",
+  "index_status": "Scopus-indexed book publisher (Cambridge UP); widely cited in SLA/CALL literature",
+  "openalex_id": null,
+  "doi": null,
+  "isbn": "978-0521-62562-1",
+  "cited_by_openalex": "high (not retrievable for books via standard API)",
+  "extraction_date": "2026-06-12",
+  "dimensional_coding": {
+    "D1_TECH": {
+      "score": 0.0,
+      "symbol": "✗",
+      "evidence": "Chapelle's six criteria (language learning potential, meaning focus, learner fit, authenticity, positive impact, practicality) are entirely pedagogical and linguistic. No reference to system architecture, algorithms, server reliability, or UI design.",
+      "confidence": "high"
+    },
+    "D2_PED": {
+      "score": 1.0,
+      "symbol": "✓",
+      "evidence": "Fully covers pedagogy via SLA-grounded criteria: language learning potential, meaning focus, learner fit. Provides operational definitions rooted in SLA theory (interactional input hypothesis, interaction hypothesis).",
+      "confidence": "high"
+    },
+    "D3_INST": {
+      "score": 0.0,
+      "symbol": "✗",
+      "evidence": "No coverage of institutional governance, analytics dashboards, data interoperability, or administrator decision-support. Framework is designed for individual-level CALL material evaluation.",
+      "confidence": "high"
+    },
+    "D4_HighStakes": {
+      "score": 0.5,
+      "symbol": "◑",
+      "evidence": "The 'authenticity' criterion partially addresses test alignment — Chapelle discusses communicative authenticity and task-based assessment. However, does not operationalize high-stakes test formats (IELTS/TOEFL rubrics, CEFR band descriptors, washback) explicitly.",
+      "confidence": "high"
+    },
+    "D6_MultiStakeholder": {
+      "score": 0.0,
+      "symbol": "✗",
+      "evidence": "Framework is entirely learner-centered. No perspective accommodating instructors or institutional administrators.",
+      "confidence": "high"
+    },
+    "D5_Rigor_separate": {
+      "symbol": "◑",
+      "evidence": "Provides conceptual definitions for each criterion but does not provide quantitative rubrics or scoring scales. Definitions require interpretation — not fully systematic."
+    }
+  },
+  "coverage_score": 1.5,
+  "coder": "Primary coder (conceptual analysis)",
+  "notes": "Foundational CALL evaluation text. Most cited framework in applied linguistics CALL evaluation literature. Intentionally excludes technical dimensions as that was outside the book's scope."
+}
