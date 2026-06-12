@@ -114,23 +114,20 @@ While D&M provides an ontological scaffold, it does not define domain-specific p
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig2_coverage_matrix_heatmap}
+  \includegraphics[width=\textwidth]{fig4_coverage_matrix_heatmap}
   \caption{Heatmap of the dimensional coverage matrix showing the gaps across reviewed frameworks.}
-  
 \end{figure*}
 
 \begin{figure}[t]
   \centering
-  \includegraphics[width=\columnwidth]{fig3_coverage_scores_ranked}
+  \includegraphics[width=\columnwidth]{fig5_coverage_scores_ranked}
   \caption{Ranked coverage scores of reviewed frameworks.}
-  
 \end{figure}
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig4_coverage_gaps_diagram}
+  \includegraphics[width=\textwidth]{fig6_coverage_gaps_diagram}
   \caption{Theoretical gap diagram highlighting the unaddressed conceptual areas.}
-  
 \end{figure*}
 
 % ============================================================

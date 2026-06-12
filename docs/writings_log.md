@@ -3,10 +3,10 @@ ANTIGRAVITY IDE - RESEARCH WRITING LOG
 ================================================================================
 PROJECT: Evaluating High-Stakes Language Test Prep Platforms in HE
 RESEARCHER: Asus
-CURRENT VERSION: v1.5
-LAST SESSION: 2026-06-12 17:42:00
-CUMULATIVE ENTRIES: 6
-TOTAL SECTIONS MODIFIED: 6
+CURRENT VERSION: v1.6
+LAST SESSION: 2026-06-12 17:53:00
+CUMULATIVE ENTRIES: 7
+TOTAL SECTIONS MODIFIED: 7
 ================================================================================
 
 ================================================================================
@@ -276,6 +276,49 @@ Verified syntax and compilation checks successfully.
 
 --- REFERENCES/FRAMEWORKS INVOKED ---
 - Arksey & O'Malley (2005) scoping review process
+
+STATUS: COMPLETED
+================================================================================
+
+================================================================================
+LOG ENTRY #7
+================================================================================
+TIMESTAMP: 2026-06-12 10:53:00 UTC
+SESSION ID: f5ce1e6a-4dee-40ac-8f1d-b28db8c7298f
+USER QUERY/REQUEST: Resolution of Figure Mismatch & Filename Alignment
+
+--- SECTION MODIFIED ---
+DOCUMENT: src/generate_subpaper_figures.py, docs/latex/journal/ethe_main.tex, docs/latex/paper/main.tex, docs/draft/*.md
+SECTION: All Figure Environments and Generation Script
+PARAGRAPH/LINE: Various lines containing figure file loading and definitions
+
+--- NATURE OF INTERVENTION ---
+TYPE: Document Alignment & Standardization
+
+--- BEFORE (Excerpt) ---
+Figure filenames did not match their compiled order of appearance in ethe_main.tex, leading to confusion where fig1 (from filename fig1_scoping_review_stages.png) was compiled as Figure 2, while fig5_research_program_architecture.png was compiled as Figure 1.
+
+--- AFTER (Excerpt) ---
+Renamed figure files and their references sequentially according to their order of appearance in ethe_main.tex:
+- fig5_research_program_architecture -> fig1_research_program_architecture
+- fig1_scoping_review_stages -> fig2_scoping_review_stages
+- fig6_pcc_and_dimensions -> fig3_pcc_and_dimensions
+- fig2_coverage_matrix_heatmap -> fig4_coverage_matrix_heatmap
+- fig3_coverage_scores_ranked -> fig5_coverage_scores_ranked
+- fig4_coverage_gaps_diagram -> fig6_coverage_gaps_diagram
+Updated all figure labels and citations in the LaTeX files and markdown drafts.
+Resolved a duplicated paragraph under the "Eight Phases of CFA" section in docs/draft/03-methodology.md.
+Verified and successfully compiled both latex files.
+
+--- RATIONALE ---
+1. Academic weakness identified: A mismatch between image filenames and compiled figure order (e.g. fig1 compiling as Figure 2) caused mapping confusion for researchers and editors reading the code.
+2. Expected enhancement to scholarly quality: Code and text references are now perfectly transparent and sequential, matching standard editorial and publication structures.
+
+--- ARGUMENTATIVE ENHANCEMENT ---
+- Aligned image assets and structural descriptions.
+
+--- REFERENCES/FRAMEWORKS INVOKED ---
+- Custom structural alignment guidelines
 
 STATUS: COMPLETED
 ================================================================================

@@ -57,9 +57,9 @@ plt.rcParams.update({
 })
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 1 — Five-Stage Scoping Review Process
+# FIG 2 — Five-Stage Scoping Review Process
 # ─────────────────────────────────────────────────────────────────────────────
-def fig1_scoping_stages():
+def fig2_scoping_stages():
     fig, ax = plt.subplots(figsize=(15, 5.5))
     ax.set_xlim(0, 15)
     ax.set_ylim(0, 5.5)
@@ -138,16 +138,16 @@ def fig1_scoping_stages():
             "Reported in accordance with PRISMA-ScR (Tricco et al., 2018)",
             ha="center", va="center", fontsize=9, color="#78909c", style="italic")
 
-    path = os.path.join(IMAGES_DIR, "fig1_scoping_review_stages.png")
+    path = os.path.join(IMAGES_DIR, "fig2_scoping_review_stages.png")
     fig.savefig(path)
     plt.close(fig)
     print(f"  ✓  {path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 2 — Coverage Matrix Heatmap
+# FIG 4 — Coverage Matrix Heatmap
 # ─────────────────────────────────────────────────────────────────────────────
-def fig2_coverage_matrix():
+def fig4_coverage_matrix():
     frameworks = [
         "F1  Chapelle (2001)",
         "F2  Hubbard (2011)",
@@ -249,16 +249,16 @@ def fig2_coverage_matrix():
 
     fig.subplots_adjust(left=0.22, right=0.96, top=0.88, bottom=0.13)
 
-    path = os.path.join(IMAGES_DIR, "fig2_coverage_matrix_heatmap.png")
+    path = os.path.join(IMAGES_DIR, "fig4_coverage_matrix_heatmap.png")
     fig.savefig(path)
     plt.close(fig)
     print(f"  ✓  {path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 3 — Coverage Scores Bar Chart (ranked)
+# FIG 5 — Coverage Scores Bar Chart (ranked)
 # ─────────────────────────────────────────────────────────────────────────────
-def fig3_coverage_scores():
+def fig5_coverage_scores():
     data = [
         ("F6  Almaiah et al. (2021)",      2.5, "IS"),
         ("F7  Al-Fraihat et al. (2020)",   2.5, "IS"),
@@ -322,16 +322,16 @@ def fig3_coverage_scores():
             fontsize=8, color=PALETTE["red_dark"], va="top", fontweight="bold")
 
     fig.tight_layout()
-    path = os.path.join(IMAGES_DIR, "fig3_coverage_scores_ranked.png")
+    path = os.path.join(IMAGES_DIR, "fig5_coverage_scores_ranked.png")
     fig.savefig(path)
     plt.close(fig)
     print(f"  ✓  {path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 4 — Four Coverage Gaps Diagram
+# FIG 6 — Four Coverage Gaps Diagram
 # ─────────────────────────────────────────────────────────────────────────────
-def fig4_coverage_gaps():
+def fig6_coverage_gaps():
     fig, ax = plt.subplots(figsize=(12.5, 7.5))
     ax.set_xlim(0, 12.5)
     ax.set_ylim(0, 7.5)
@@ -442,16 +442,16 @@ def fig4_coverage_gaps():
             ha="center", va="center", fontsize=11.5, fontweight="bold",
             color=PALETTE["blue_dark"])
 
-    path = os.path.join(IMAGES_DIR, "fig4_coverage_gaps_diagram.png")
+    path = os.path.join(IMAGES_DIR, "fig6_coverage_gaps_diagram.png")
     fig.savefig(path)
     plt.close(fig)
     print(f"  ✓  {path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 5 — Research Program Architecture (Redesigned Research Workflow)
+# FIG 1 — Research Program Architecture (Redesigned Research Workflow)
 # ─────────────────────────────────────────────────────────────────────────────
-def fig5_research_architecture():
+def fig1_research_architecture():
     fig, ax = plt.subplots(figsize=(11.5, 6.2))
     ax.set_xlim(0, 11.5)
     ax.set_ylim(0, 6.2)
@@ -550,16 +550,16 @@ def fig5_research_architecture():
             ha="center", va="center", fontsize=8.5,
             color=PALETTE["grey_text"], style="italic")
 
-    path = os.path.join(IMAGES_DIR, "fig5_research_program_architecture.png")
+    path = os.path.join(IMAGES_DIR, "fig1_research_program_architecture.png")
     fig.savefig(path)
     plt.close(fig)
     print(f"  ✓  {path}")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# FIG 6 — PCC Framework & Analytical Dimensions (Supplementary)
+# FIG 3 — PCC Framework & Analytical Dimensions (Supplementary)
 # ─────────────────────────────────────────────────────────────────────────────
-def fig6_pcc_and_dimensions():
+def fig3_pcc_and_dimensions():
     fig, axes = plt.subplots(1, 2, figsize=(12.5, 6.2))
     fig.suptitle(
         "Methodological Framework: PCC Scoping Review Design & Analytical Dimensions",
@@ -652,7 +652,7 @@ def fig6_pcc_and_dimensions():
              style="italic", transform=ax2.transAxes)
 
     fig.tight_layout()
-    path = os.path.join(IMAGES_DIR, "fig6_pcc_and_dimensions.png")
+    path = os.path.join(IMAGES_DIR, "fig3_pcc_and_dimensions.png")
     fig.savefig(path)
     plt.close(fig)
     print(f"  ✓  {path}")
@@ -663,10 +663,10 @@ def fig6_pcc_and_dimensions():
 # ─────────────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     print(f"\nGenerating figures -> {IMAGES_DIR}\n")
-    fig1_scoping_stages()
-    fig2_coverage_matrix()
-    fig3_coverage_scores()
-    fig4_coverage_gaps()
-    fig5_research_architecture()
-    fig6_pcc_and_dimensions()
+    fig1_research_architecture()
+    fig2_scoping_stages()
+    fig3_pcc_and_dimensions()
+    fig4_coverage_matrix()
+    fig5_coverage_scores()
+    fig6_coverage_gaps()
     print("\nAll figures generated successfully.")

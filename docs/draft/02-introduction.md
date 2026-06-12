@@ -43,9 +43,8 @@ Table~tab:objectives details the conceptual research objectives and correspondin
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig5_research_program_architecture}
+  \includegraphics[width=\textwidth]{fig1_research_program_architecture}
   \caption{Research Program Architecture illustrating the relationship between the integrative literature review and the conceptual framework development.}
-  
 \end{figure*}
 
 % ============================================================

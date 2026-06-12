@@ -35,7 +35,7 @@ Table~tab:philosophy summarizes the philosophical and methodological layers of t
 
 \subsection{Eight Phases of CFA in This Study}
 
-Following Jabareen (2009)~[b6], the framework was developed through eight iterative phases. Table~tab:cfa_phases details the procedures and conceptual outputs for each of these eight phases. The execution of these phases is inherently iterative, allowing for constant refinement of concepts as new literature is deconstructed. In Phase 1, mapping data sources provides the conceptual raw data from Web of Science, Scopus, and other databases, ensuring a broad multidisciplinary scope. Phases 2 through 5 deconstruct these sources to extract candidate concepts (e.g., washback, cognitive load, TAM variables) and integrate them into complementary dimensions, resolving theoretical overlaps. Phase 6 synthesizes these interlinked concepts into a coherent plane of understanding (Theoretical Framework v0.1). Phase 7 represents the validation stage, subjecting the framework to theoretical cross-validation, mathematical proofs, and sensitivity simulations. Finally, Phase 8 incorporates expert feedback to refine the indicators, producing the finalized assessment rubrics. The execution of these phases is inherently iterative, allowing for constant refinement of concepts as new literature is deconstructed. In Phase 1, mapping data sources provides the conceptual raw data from Web of Science, Scopus, and other databases, ensuring a broad multidisciplinary scope. Phases 2 through 5 deconstruct these sources to extract candidate concepts (e.g., washback, cognitive load, TAM variables) and integrate them into complementary dimensions, resolving theoretical overlaps. Phase 6 synthesizes these interlinked concepts into a coherent plane of understanding (Theoretical Framework v0.1). Phase 7 represents the validation stage, subjecting the framework to theoretical cross-validation, mathematical proofs, and sensitivity simulations. Finally, Phase 8 incorporates expert feedback to refine the indicators, producing the finalized assessment rubrics.
+Following Jabareen (2009)~[b6], the framework was developed through eight iterative phases. Table~tab:cfa_phases details the procedures and conceptual outputs for each of these eight phases. The execution of these phases is inherently iterative, allowing for constant refinement of concepts as new literature is deconstructed. In Phase 1, mapping data sources provides the conceptual raw data from Web of Science, Scopus, and other databases, ensuring a broad multidisciplinary scope. Phases 2 through 5 deconstruct these sources to extract candidate concepts (e.g., washback, cognitive load, TAM variables) and integrate them into complementary dimensions, resolving theoretical overlaps. Phase 6 synthesizes these interlinked concepts into a coherent plane of understanding (Theoretical Framework v0.1). Phase 7 represents the validation stage, subjecting the framework to theoretical cross-validation, mathematical proofs, and sensitivity simulations. Finally, Phase 8 incorporates expert feedback to refine the indicators, producing the finalized assessment rubrics.
 
 \begin{table*}[t]
   \caption{The Eight Phases of Conceptual Framework Analysis (CFA) applied in this study}
@@ -64,7 +64,7 @@ The literature data collection and selection follow Arksey and O'Malley's (2005)
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig1_scoping_review_stages}
+  \includegraphics[width=\textwidth]{fig2_scoping_review_stages}
   \caption{Five-stage scoping review process (Arksey \& O'Malley, 2005) showing study-specific execution details.}
   \label{fig:scoping_stages}
 \end{figure*}
@@ -106,7 +106,7 @@ The preview of the structural path model in Equations~4--7 establishes the predi
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{fig6_pcc_and_dimensions}
+  \includegraphics[width=\textwidth]{fig3_pcc_and_dimensions}
   \caption{PCC Framework elements and analytical dimension grounding.}
   \label{fig:pcc_dims}
 \end{figure*}
